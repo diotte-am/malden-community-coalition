@@ -1,0 +1,37 @@
+name: Deploy to GitHub Pages # 
+
+on:
+  push:
+    branches:
+      - main # branch which will trigger workflow
+
+permissions:
+  contents: write # gives permision to push to gh-pages branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps: # sequential steps the ubuntu server will complete
+      - name: Checkout Code
+        uses: actions/checkout@v4 # a github utility that clones code to ubuntu server
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4 # install Node.js 20, the cache will make future build complete faster
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci # this is used for automated applications, instead of npm install
+        # ci will download the exact versions listed in package-lock.json, install reads package.json and calculates compatible ranges.
+
+      - name: Build Project
+      - run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4 # open source utili†y
+        with:
+          folder: dist # where to find the static code that Vite just created
+          branch: gh-pages # where to push the code to
+
