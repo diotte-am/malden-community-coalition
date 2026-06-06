@@ -1,13 +1,117 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>mcc-org-website</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>Malden Community Coalition</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<!-- Metadata-->
+	<meta name="description" content="Official website of the Malden Community Coalition." />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Home - Malden Community Coalition" />
+	<meta property="og:description" content="The official website of the Malden Community Coalition, based in Malden, MA." />
+	<meta property="og:site_name" content="Malden Community Coalition" />
+
+	<!-- Fonts -->
+    	<link rel="preconnect" href="https://fonts.googleapis.com">
+    	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    	<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    	<link href="https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+	<!-- CSS -->
+    	<link href="/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+	
+	<!-- Scripts -->
+	<script type="text/javascript" src="/menu.js"></script>
+</head>
+
+<body>
+<!-- Header -->
+<div class="header-background">
+	<div class="header-container">
+		<!-- Header Text -->
+		<div>
+            <div class="desktop-only">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="https://maldencommunitycoalition.neocities.org/"><img src="https://maldencommunitycoalition.neocities.org/MCC.png" style="height: 150px; padding-right: 0.75em;"></a>
+                        </td>
+                        <td>
+                            <a href="https://maldencommunitycoalition.neocities.org/" style="text-decoration: none;"><span class="header-text" style="font-size: 2em;">Malden Community Coalition</span></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="mobile-only">
+                <table>
+                    <tr>
+                        <td>
+                            <a href="https://maldencommunitycoalition.neocities.org/"><img src="https://maldencommunitycoalition.neocities.org/MCC.png" style="height: 90px; padding-right: 0.75em;"></a>
+                        </td>
+                        <td>
+                            <a href="https://maldencommunitycoalition.neocities.org/" style="text-decoration: none;"><span class="header-text" style="font-size: 1.2em;">Malden Community Coalition</span></a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+		</div>
+		
+		<!-- Main Navigation Menu -->
+		<div class="menu-container">
+           	<!-- Desktop Menu -->
+			<div class="desktop-only">
+				<nav aria-label="Main Navigation">
+				<ul class="menu">
+                    <li class="menu-item"><a href="/">Home</a></li>
+                    <li class="menu-item"><a href="/about">About</a><li>
+				    <li class="menu-item"><a href="/news">News</a></li>
+				    <li class="menu-item"><a href="/events">Events</a><li>
+				    <li class="menu-item"><a href="/directory">Directory</a></li>
+				    <li class="menu-item"><a href="/contact">Contact</a></li>
+                </ul>
+                </nav>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+            	<div class="hamburger-icon1"></div>
+            	<div class="hamburger-icon2"></div>
+            	<div class="hamburger-icon3"></div>
+            	<ul class="mobile-menu animate__animated animate__fadeIn animate__faster">
+                		<li class="menu-item-mobile"><a href="/">Home</a></li>
+            			<li class="menu-item-mobile"><a href="/about">About</a></li>
+                		<li class="menu-item-mobile"><a href="/news">News</a></li>
+                		<li class="menu-item-mobile"><a href="/events">Events</a></li>
+                    	<li class="menu-item-mobile"><a href="/directory">Directory</a></li>
+                    	<li class="menu-item-mobile"><a href="/contact">Contact</a></li>
+		        </ul>
+			</div>
+        </div>
+    </div>
+</div>
+
+<div class="animate__animated animate__fadeIn animate__slower">
+	<div class="main-container" style="text-align: center;">
+		<h1>Welcome to the Malden Community Coalition official website!</h1>
+		<span class="default">
+            The <b>Malden Community Coalition</b> is a 
+            coalition of communities in Malden putting their strengths together 
+            to create strong, resilient support networks for Malden residents 
+            of all backgrounds. Check out our upcoming events 
+            <a href="/events">here</a>, and get in touch with us 
+            <a href="/contact">here</a>! 
+      
+      <br /><br />
+      <i>Logo designed by <a href="https://karipercival.com/">Kari Percival</a></i>
+		</span>
+	</div>
+</div>
+</body>
 </html>
