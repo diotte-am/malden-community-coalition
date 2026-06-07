@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages # 
+name: Deploy to GitHub Pages # this is the display name for the workflow
 
 on:
   push:
