@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
 import Fuse from 'fuse.js';
@@ -11,8 +11,16 @@ export default function Resources() {
   const [searchParams] = useSearchParams(); // 2. Add this hook handler
   
   // Default state value looks at the URL parameter if it exists
-  const [searchQuery, setSearchQuery] = useState(searchParams.get('search') || '');
+  const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+
+  // capture incoming home page redirect query EXACTLY ONCE
+  useEffect( () => {
+    const urlQuery = searchParams.get('search');
+    if(urlQuery) {
+        setSearchQuery(urlQuery);
+    }
+  }, []); // empty dependency array ensure this never loops while typing
   
   // Parse active locale token strings down to match keys inside the single file
   const currentLang = i18n.language || 'en';
