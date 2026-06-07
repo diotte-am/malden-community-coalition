@@ -1,134 +1,114 @@
-esources-page {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem 0;
+/* Global Reset & Base Theme Variables */
+:root {
+  --bg-color: #f9f9f9;
+  --card-bg: #ffffff;
+  --border-color: #e0e0e0;
+  --text-main: #333333;
+  --text-muted: #555555; /* Darkened slightly from #666 for WCAG 4.5:1 contrast compliance */
+  --primary-color: #0070f3;
+  --focus-ring: #ffbf47;  /* High-visibility gold for keyboard users */
 }
 
-h1 {
-  font-size: 2rem; /* Exactly 2x the user's default preferred text size */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
 }
 
-p {
-  font-size: 1rem;
-  line-height: 1.5; /* WCAG standard: line-height should be at least 1.5 for readability */
-  letter-spacing: 0.0125em; /* Gives text slight breathing room */
+/* Global Shell Layout */
+.app-container {
+  min-height: 100vh;
 }
 
-.search-controls {
+/* Modern Toolbar Layout */
+.navbar {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-.search-controls select {
-  flex: none;
-  min-width: 180px;
-}
-
-.resources-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.resource-card {
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  justify-content: space-between; /* Pushes links to the left, language picker to the far right */
+  align-items: center;
+  padding: 0.75rem 2rem;
   background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 
-.category-badge {
-  font-size: 0.75rem;
-  background-color: var(--accent-blue-bg);
-  color: var(--accent-blue);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-weight: bold;
-}
-
-.resource-card h3 {
-  margin: 0.5rem 0;
-}
-
-.resource-desc {
-  color: #444;
-  font-size: 0.95rem;
-  line-height: 1.5;
-}
-
-.card-divider {
-  border: 0;
-  border-top: 1px solid #eee;
-  margin: 1rem 0;
-}
-
-.contact-details {
-  font-size: 0.85rem;
-  color: var(--text-muted);
+/* Left Links Container */
+.nav-links-container {
   display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+  gap: 1.25rem;
 }
 
-.card-action-btn {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: #fff;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
+/* Base styling for interactive tabs (removing the raw blue underlined style) */
+.nav-link {
   text-decoration: none;
-  font-weight: 500;
-  margin-top: 0.5rem;
-}
-
-.no-results {
-  grid-column: 1 / -1;
-  text-align: center;
   color: var(--text-muted);
-  padding: 3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-/* Automatically handle users who need High Contrast Mode (e.g., Color Blindness/Low Vision) */
+/* Hover State */
+.nav-link:hover {
+  color: var(--text-main);
+  background-color: #f0f0f0;
+}
+
+/* Active State (highlights exactly which tab page is currently loaded) */
+.nav-link.active-link {
+  color: var(--primary-color);
+  background-color: #e6f0ff;
+  font-weight: 600;
+}
+
+/* Right Panel Layout Placement */
+.navbar-right-panel {
+  display: flex;
+  align-items: center;
+}
+
+/* Language Selection Area */
+.language-selector-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.language-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.lang-select {
+  padding: 0.4rem 2rem 0.4rem 0.8rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: var(--card-bg);
+  font-size: 0.9rem;
+  color: var(--text-main);
+  cursor: pointer;
+  min-height: 44px; /* WCAG standard minimum touch-target size for mobile/accessibility panels */
+}
+
+/* ♿ KEYBOARD FOCUS INDICATOR (Crucial for Accessibility) */
+input:focus-visible,
+select:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* ♿ HIGH CONTRAST MEDIA QUERY */
 @media (prefers-contrast: more) {
   :root {
     --bg-color: #ffffff;
     --card-bg: #ffffff;
     --text-main: #000000;
-    --text-muted: #222222;
-    --primary-color: #0044cc; /* Deepened blue for strict contrast ratios */
+    --text-muted: #111111;
+    --primary-color: #0044cc;
     --border-color: #000000;
   }
-  
-  .resource-card {
-    border: 2px solid #000000; /* Thicker borders to distinguish layout sections */
-  }
 }
-
-/* Automatically stop animations for users with vestibular/motion disorders */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-/* Style what interactive elements look like when tabbed onto via keyboard */
-input:focus,
-select:focus,
-a:focus,
-button:focus {
-  outline: 3px solid #ffbf47; /* High-visibility gold outline */
-  outline-offset: 2px;       /* Pushes the outline slightly away from the element so it doesn't blur */
-}
-
-/* Optional clean-up: Only show the heavy outline if they are actually using a keyboard */
-:focus-visible {
-  outline: 3px solid #ffbf47;
-  outline-offset: 2px;
-}
-
