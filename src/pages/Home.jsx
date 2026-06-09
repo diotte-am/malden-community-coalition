@@ -24,8 +24,7 @@ export default function Home() {
       
       {/* Hero Header Section */}
       <header style={{ textAlign: 'center', margin: '3rem 0' }}>
-        <h1>{t('home.welcome', 'Malden Community Hub')}</h1>
-        <p style={{ color: '#666', fontSize: '1.2rem' }}>Connecting neighbors with local resources, events, and support networks.</p>
+        <p style={{ color: '#666', fontSize: '1.2rem' }}>A coalition of communities uniting our strengths to build resilient support networks for neighbors of all backgrounds.</p>
       </header>
 
       {/* Quick Resource Search Feature */}

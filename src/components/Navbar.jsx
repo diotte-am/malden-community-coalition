@@ -35,9 +35,6 @@ export default function Navbar() {
           
           <div className="brand-text-details">
             <h1 className="organization-title">Malden Community Coalition</h1>
-            <p className="organization-mission">
-              {t('header.mission', 'A coalition of communities in Malden putting their strengths together to create strong, resilient support networks for Malden residents of all backgrounds.')}
-            </p>
           </div>
         </div>
 
