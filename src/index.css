@@ -112,3 +112,95 @@ button:focus-visible {
     --border-color: #000000;
   }
 }
+
+/* Outer Header Wrapper Container */
+.site-header {
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+/* Brand Banner Top Row */
+.brand-banner-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.5rem 2rem;
+  gap: 2rem;
+}
+
+/* Grouping Logo and Headings together */
+.brand-identity-box {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: 75%;
+}
+
+/* 📐 STRICT SQUARE LOGO WRAPPER */
+.logo-square-container {
+  width: 64px;       /* Set your preferred square dimension here */
+  height: 64px;
+  flex-shrink: 0;    /* Prevents the square from squeezing on narrow browser screens */
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #eaeaea; /* Light backdrop color for alpha transparency graphics */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crops image cleanly if your uploaded asset is slightly off-square */
+}
+
+/* Fallback visualization container rules if the raw file asset path throws a 404 error */
+.logo-fallback-style {
+  border: 2px dashed #bbb;
+  position: relative;
+}
+.logo-fallback-style::after {
+  content: "Logo";
+  font-size: 0.75rem;
+  color: #888;
+  font-weight: bold;
+}
+
+/* Typography Spacing */
+.brand-text-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.organization-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+.organization-mission {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+}
+
+/* Header Alignment Rules */
+.header-right-controls {
+  padding-top: 0.25rem;
+}
+
+/* Readjusting Toolbar Row to remove duplicate boxes */
+.navbar {
+  display: flex;
+  padding: 0.5rem 2rem;
+  background-color: #fcfcfc;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: none;
+  box-shadow: none;
+}
