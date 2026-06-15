@@ -59,7 +59,7 @@ export default function Videos() {
   };
 
   return (
-    <div className="videos-page">
+    <div className="page-container videos-page">
       <header className="page-header">
         <h2>{t('videos.title', 'Video Series & Workshops')}</h2>
         <p className="page-subtitle">
