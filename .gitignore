@@ -26,3 +26,10 @@ dist-ssr
 # Local env files
 .env
 .env*.local
+
+# Python script execution cache overrides
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/

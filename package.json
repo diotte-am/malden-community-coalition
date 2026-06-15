@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "db:videos": "python scripts/generate_videos_json.py"
   },
   "dependencies": {
     "fuse.js": "^7.4.2",
