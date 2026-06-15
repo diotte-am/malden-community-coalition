@@ -54,6 +54,9 @@ export default function Navbar() {
           <Link to="/resources" className={getLinkClass('/resources')}>
             {t('nav.resources', 'Resources')}
           </Link>
+           <Link to="/videos" className={getLinkClass('/videos')}>
+            {t('nav.videos', 'Videos')}
+          </Link>
         </div>
       </nav>
     </header>
