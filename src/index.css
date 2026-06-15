@@ -352,3 +352,16 @@ button:focus-visible {
   border-radius: 4px;
   cursor: pointer;
 }
+
+/* Shared Global Page Wrapper to enforce consistent alignment */
+.page-container {
+  max-width: 1200px;  /* Keeps the website content from stretching infinitely on wide screens */
+  margin: 0 auto;     /* Centers the whole page container perfectly horizontally */
+  padding: 2.5rem 2rem; /* Enforces clean top/bottom breathing room and strict left/right margins */
+  box-sizing: border-box;
+}
+
+/* Add a bit of spacing between the video headers and your control dashboard */
+.videos-page .page-header {
+  margin-bottom: 1.75rem;
+}
