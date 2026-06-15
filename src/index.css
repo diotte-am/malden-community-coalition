@@ -365,3 +365,180 @@ button:focus-visible {
 .videos-page .page-header {
   margin-bottom: 1.75rem;
 }
+
+/* Vertical Stack spacing container adjustments */
+.videos-list-vertical-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem; /* Generous breathing room between video entries */
+  margin-top: 1.5rem;
+}
+
+/* Outer Horizontal Card Framework structure */
+.video-horizontal-row-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* 1. TOP BLOCK: Full Width Title Layout */
+.video-row-header-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #f4f4f4;
+  padding-bottom: 0.75rem;
+}
+
+.video-row-title {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.video-row-category-badge {
+  background-color: #f0f2f5;
+  color: #555;
+  font-size: 0.75rem;
+  font-weight: bold;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* 2. LOWER BLOCK: Media/Description Flexible Grid System Split */
+.video-row-main-split {
+  display: grid;
+  grid-template-columns: 420px 1fr; /* Strict sizing blueprint for crisp playback window */
+  gap: 1.75rem;
+}
+
+/* Media Quadrant & Thumbnail Aspect Ratio Rules */
+.video-row-media-quadrant {
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  background-color: #000;
+}
+
+.video-row-embed-frame, .video-row-thumbnail-trigger-btn {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Modern responsive aspect ratio wrapper blueprint rule */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-row-thumbnail-trigger-btn {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.video-row-img-canvas {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-row-thumbnail-trigger-btn:hover .video-row-img-canvas {
+  transform: scale(1.02); /* Subtle hover click signifier */
+}
+
+/* ⏱️ THE HOVER/OVERLAY TIME COUNTER STAMP */
+.video-row-duration-timestamp-overlay {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+  letter-spacing: 0.02em;
+}
+
+/* Centered play button overlay asset icon */
+.video-row-play-overlay-icon {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-row-play-overlay-icon::after {
+  content: '';
+  margin-left: 4px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent #111;
+}
+
+.video-row-thumbnail-trigger-btn:hover .video-row-play-overlay-icon {
+  background-color: var(--primary-color, #0044cc);
+  transform: scale(1.1);
+}
+
+.video-row-thumbnail-trigger-btn:hover .video-row-play-overlay-icon::after {
+  border-left-color: #ffffff; /* Turns arrow icon white on button hover state */
+}
+
+.video-row-embed-frame iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* Right Quadrant Formatting Architecture */
+.video-row-text-details-quadrant {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.video-row-description-body {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: var(--text-main);
+}
+
+.video-row-date-stamp {
+  font-size: 0.85rem;
+  color: var(--text-muted, #666);
+  font-weight: 500;
+}
+
+.video-row-tag-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto; /* Pushes tags cleanly down to align horizontally with the block base */
+  padding-top: 0.5rem;
+}
+
+/* Mobile Responsiveness View Adaptations */
+@media (max-width: 850px) {
+  .video-row-main-split {
+    grid-template-columns: 1fr; /* Collapse layout split completely flat into one vertical block columns on tablets/phones */
+    gap: 1.25rem;
+  }
+}
