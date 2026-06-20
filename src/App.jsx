@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Resources from './pages/Resources';
 import Videos from './pages/Videos';
+import Contact from './pages/Contact';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/videos" element={<Videos />} />
+            <Route path="/contact" element={<Contact />} />
           </Routes>
         </main>
 
