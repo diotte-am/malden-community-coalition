@@ -47,16 +47,16 @@ export default function Videos() {
       </header>
 
       <div className="video-controls-dashboard">
-        <div className="control-group">
+        {/* <div className="control-group">
           <label htmlFor="video-category-select">{t('videos.filter_label', 'Series:')}</label>
           <select id="video-category-select" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
             {uniqueCategories.map(cat => <option key={cat} value={cat}>{cat}</option>)}
           </select>
-        </div>
+        </div>*/}
         <button className="sort-toggle-btn" onClick={() => setIsDescendingOrder(!isDescendingOrder)}>
-          {isDescendingOrder ? '📅 ↓ Newest First' : '📅 ↑ Oldest First'}
+          {isDescendingOrder ? '↓ Newest' : '↑ Oldest'}
         </button>
-      </div>
+      </div> 
 
       {activeTagSearch && (
         <div className="active-filter-status" role="status">

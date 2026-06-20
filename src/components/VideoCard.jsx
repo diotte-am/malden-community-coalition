@@ -8,7 +8,7 @@ export default function VideoCard({ video, descKey, onTagClick, activeTagSearch 
       {/* 1. Full-Width Structural Title Header Top Anchor */}
       <header className="video-row-header-block">
         <h3 className="video-row-title">{video.title}</h3>
-        <span className="video-row-category-badge">{video.category}</span>
+       {/* <span className="video-row-category-badge">{video.category}</span> */}
       </header>
 
       {/* 2. Lower Media & Details Horizontal Flex Split Frame */}
@@ -88,4 +88,4 @@ export default function VideoCard({ video, descKey, onTagClick, activeTagSearch 
       </div>
     </article>
   );
-}
+}                 
