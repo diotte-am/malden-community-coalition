@@ -22,7 +22,7 @@ export default function Navbar() {
           {/* Square Logo Placeholder - Replace 'logo-placeholder.png' with your real file asset later */}
           <div className="logo-square-container">
             <img 
-              src="./assets/MCC.png" 
+              src="src/assets/MCC.png" 
               alt="Malden Community Coalition logo" 
               className="brand-logo-img"
               onError={(e) => {
@@ -57,7 +57,7 @@ export default function Navbar() {
            <Link to="/videos" className={getLinkClass('/videos')}>
             {t('nav.videos', 'Videos')}
           </Link>
-          <Link to="/videos" className={getLinkClass('/contact')}>
+          <Link to="/contact" className={getLinkClass('/contact')}>
             {t('nav.contact', 'Contact')}
           </Link>
         </div>
