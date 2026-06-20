@@ -583,39 +583,26 @@ button:focus-visible {
   line-height: 1.4;
 }
 
-/* Language Dropdown Selector Styles */
-.lang-select-wrapper {
+/* 1. This aligns the logo image and the 'MCC' text side-by-side vertically */
+.navbar-logo-link {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: #111111; /* Or your main text color variable */
 }
 
-.lang-dropdown-menu {
-  background-color: var(--card-bg, #ffffff);
-  border: 1px solid var(--border-color, #e0e0e0);
-  padding: 0.35rem 1.75rem 0.35rem 0.5rem; /* Space on right for native dropdown arrow */
-  border-radius: 4px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: var(--text-main, #111111);
-  transition: all 0.15s ease;
-  outline: none;
+/* 2. THIS IS THE CRITICAL PART: This shrinks your image back down to earth */
+.navbar-logo-img {
+  height: 40px;       /* Forces the image height to fit perfectly inside the nav row */
+  width: auto;         /* Automatically maintains the image's original proportions so it doesn't look stretched or squished */
+  display: block;
+  object-fit: contain;
 }
 
-.lang-dropdown-menu:hover, .lang-dropdown-menu:focus {
-  background-color: #f5f5f5;
-  border-color: #bbb;
-}
-
-/* Screen-reader utility helper to hide the label while keeping it accessible */
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+/* 3. Cleans up the 'MCC' text look right next to it */
+.navbar-title-text {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
 }
