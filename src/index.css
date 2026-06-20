@@ -542,3 +542,43 @@ button:focus-visible {
     gap: 1.25rem;
   }
 }
+
+/* Stack social link buttons cleanly */
+.social-links-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.social-link-item {
+  display: inline-block;
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e0e0e0);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.15s ease;
+  width: fit-content;
+}
+
+.social-link-item:hover {
+  background-color: #f6f8fa;
+  border-color: #bbb;
+  text-decoration: none !important;
+}
+
+/* Give the pending Discord alert a soft callout background */
+.discord-teaser-box {
+  background-color: #fbfbfe;
+  border: 1px dashed #c0caeb;
+  padding: 1rem;
+  border-radius: 6px;
+}
+
+.discord-status-text {
+  font-size: 0.9rem !important;
+  color: #556270;
+  line-height: 1.4;
+}
