@@ -1,67 +1,79 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import LanguageSelector from './LanguageSelector';
+
+// Import your local image asset using a relative path
+import mccLogo from '../assets/MCC.png';
 
 export default function Navbar() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const location = useLocation();
 
-  // Helper function to apply an active style class to the tab the user is currently visiting
+  // Helper function to apply an 'active' class to whichever page the user is currently viewing
   const getLinkClass = (path) => {
-    return location.pathname === path ? 'nav-link active-link' : 'nav-link';
+    return location.pathname === path ? 'nav-link active' : 'nav-link';
+  };
+
+  // Handler function to change language from the dropdown menu selection
+  const handleLanguageChange = (e) => {
+    const selectedLang = e.target.value;
+    i18n.changeLanguage(selectedLang);
   };
 
   return (
-   <header className="site-header">
-      {/* 1. TOP BRAND BANNER ROW */}
-      <div className="brand-banner-row">
+    <nav className="navbar-element">
+      <div className="navbar-container">
         
-        {/* Left Side: Logo & Group Identity */}
-        <div className="brand-identity-box">
-          {/* Square Logo Placeholder - Replace 'logo-placeholder.png' with your real file asset later */}
-          <div className="logo-square-container">
+        {/* Left Side: Interactive Logo & Brand Anchor */}
+        <div className="navbar-brand-section">
+          <Link to="/" className="navbar-logo-link" aria-label="Malden Community Coalition Home">
             <img 
-              src="src/assets/MCC.png" 
-              alt="Malden Community Coalition logo" 
-              className="brand-logo-img"
-              onError={(e) => {
-                // Generates a clean grey fallback container box if the image file isn't in your directory yet
-                e.target.style.display = 'none';
-                e.target.parentNode.classList.add('logo-fallback-style');
-              }}
+              src={mccLogo} 
+              alt="Malden Community Coalition Logo" 
+              className="navbar-logo-img" 
             />
-          </div>
-          
-          <div className="brand-text-details">
-            <h1 className="organization-title">Malden Community Coalition</h1>
-          </div>
+            <span className="navbar-title-text">MCC</span>
+          </Link>
         </div>
 
-        {/* Right Side: Accessible Language Control Dropdown */}
-        <div className="header-right-controls">
-          <LanguageSelector />
-        </div>
-
-      </div>
-
-      {/* 2. LOWER NAVIGATION TOOLBAR ROW */}
-      <nav className="navbar" aria-label="Main Directory Navigation">
-        <div className="nav-links-container">
+        {/* Right Side: Navigation Menu Items & Multi-language Selector */}
+        <div className="navbar-links-section">
           <Link to="/" className={getLinkClass('/')}>
             {t('nav.home', 'Home')}
           </Link>
+          
           <Link to="/resources" className={getLinkClass('/resources')}>
             {t('nav.resources', 'Resources')}
           </Link>
-           <Link to="/videos" className={getLinkClass('/videos')}>
+
+          <Link to="/videos" className={getLinkClass('/videos')}>
             {t('nav.videos', 'Videos')}
           </Link>
+
           <Link to="/contact" className={getLinkClass('/contact')}>
             {t('nav.contact', 'Contact')}
           </Link>
+
+          {/* Accessible Dropdown Language Menu Selector */}
+          <div className="lang-select-wrapper">
+            <label htmlFor="navbar-lang-select" className="visually-hidden">
+              🌐
+            </label>
+            <select 
+              id="navbar-lang-select"
+              className="lang-dropdown-menu" 
+              value={i18n.language} 
+              onChange={handleLanguageChange}
+            >
+              <option value="en">English</option>
+              <option value="es">Español</option>
+              <option value="pt">Português</option>
+              <option value="zh">简体中文</option>
+            </select>
+          </div>
         </div>
-      </nav>
-    </header>
+
+      </div>
+    </nav>
   );
 }
