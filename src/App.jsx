@@ -23,7 +23,7 @@ export default function App() {
             <Route path="/videos" element={<Videos />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/contact/message" element={<ContactFormPage />} />
-            <Route path="/team" element={<Staff />} />
+            <Route path="/staff" element={<Staff />} />
           </Routes>
         </main>
 
