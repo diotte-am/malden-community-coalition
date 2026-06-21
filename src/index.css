@@ -1,324 +1,109 @@
-/* Global Reset & Base Theme Variables */
+/* ==========================================================================
+   1. DESIGN SYSTEM VARIABLES (Single Source of Truth)
+   ========================================================================== */
 :root {
-  --bg-color: #f9f9f9;
+  /* Brand Specific Colors */
+  --brand-logo-orange: #eb8a0d;
+  --brand-wordmark-blue: #0d4a9d;
+  
+  /* Semantic Mappings */
+  --primary-color: var(--brand-wordmark-blue);  /* Main blue for links & buttons */
+  --primary-hover: #0a3a7b;                     /* Darker blue for hover states */
+  --accent-color: var(--brand-logo-orange);     /* Pop color for highlight details */
+  
+  /* Backgrounds & Text */
+  --bg-main: #f8f9fa;
   --card-bg: #ffffff;
+  --text-main: #1a1a1a;
+  --text-muted: #555555;
   --border-color: #e0e0e0;
-  --text-main: #333333;
-  --text-muted: #555555; /* Darkened slightly from #666 for WCAG 4.5:1 contrast compliance */
-  --primary-color: #0070f3;
-  --focus-ring: #ffbf47;  /* High-visibility gold for keyboard users */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --transition-fast: 0.15s ease;
+  
+  /* Reusable Decorative Heritage Gradient */
+  --decorative-gradient: linear-gradient(135deg, #f9f9e7 0%, #b0f3fd 100%);
 }
 
+/* ==========================================================================
+   2. GLOBAL RESET & BASE RULES
+   ========================================================================== */
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--bg-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-main);
   color: var(--text-main);
+  line-height: 1.5;
 }
 
-/* Global Shell Layout */
-.app-container {
-  min-height: 100vh;
+box-sizing-base, *, *::before, *::after {
+  box-sizing: border-box;
 }
 
-/* Modern Toolbar Layout */
-.navbar {
-  display: flex;
-  justify-content: space-between; /* Pushes links to the left, language picker to the far right */
-  align-items: center;
-  padding: 0.75rem 2rem;
-  background-color: var(--card-bg);
+/* ==========================================================================
+   3. REUSABLE UTILITY LAYOUTS & HERO BANNERS
+   ========================================================================== */
+/* Master structure to bound and pad every page view uniformly */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 2rem;
+}
+
+/* Decorative Hero Header that features the historic gradient */
+.page-hero-banner {
+  background: var(--decorative-gradient);
   border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  padding: 3.5rem 2rem;
 }
 
-/* Left Links Container */
-.nav-links-container {
-  display: flex;
-  gap: 1.25rem;
+.page-hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-/* Base styling for interactive tabs (removing the raw blue underlined style) */
-.nav-link {
-  text-decoration: none;
+.page-hero-content h2 {
+  font-size: 2.25rem;
+  color: var(--brand-wordmark-blue);
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.page-subtitle {
   color: var(--text-muted);
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 0.5rem 0.75rem;
-  border-radius: 4px;
-  transition: color 0.2s ease, background-color 0.2s ease;
+  font-size: 1.1rem;
+  margin: 0;
 }
 
-/* Hover State */
-.nav-link:hover {
-  color: var(--text-main);
-  background-color: #f0f0f0;
+/* Reusable Horizontal Split Layout (Great for contact pages or split text/media) */
+.layout-split-twocol {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 3.5rem;
+  margin-top: 1.5rem;
 }
 
-/* Active State (highlights exactly which tab page is currently loaded) */
-.nav-link.active-link {
-  color: var(--primary-color);
-  background-color: #e6f0ff;
-  font-weight: 600;
-}
-
-/* Right Panel Layout Placement */
-.navbar-right-panel {
-  display: flex;
-  align-items: center;
-}
-
-/* Language Selection Area */
-.language-selector-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.language-label {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.lang-select {
-  padding: 0.4rem 2rem 0.4rem 0.8rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background-color: var(--card-bg);
-  font-size: 0.9rem;
-  color: var(--text-main);
-  cursor: pointer;
-  min-height: 44px; /* WCAG standard minimum touch-target size for mobile/accessibility panels */
-}
-
-/* ♿ KEYBOARD FOCUS INDICATOR (Crucial for Accessibility) */
-input:focus-visible,
-select:focus-visible,
-a:focus-visible,
-button:focus-visible {
-  outline: 3px solid var(--focus-ring);
-  outline-offset: 2px;
-}
-
-/* ♿ HIGH CONTRAST MEDIA QUERY */
-@media (prefers-contrast: more) {
-  :root {
-    --bg-color: #ffffff;
-    --card-bg: #ffffff;
-    --text-main: #000000;
-    --text-muted: #111111;
-    --primary-color: #0044cc;
-    --border-color: #000000;
+@media (max-width: 850px) {
+  .layout-split-twocol {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
 }
 
-/* Outer Header Wrapper Container */
-.site-header {
-  background-color: var(--card-bg);
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
-
-/* Brand Banner Top Row */
-.brand-banner-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  padding: 1.5rem 2rem;
-  gap: 2rem;
-}
-
-/* Grouping Logo and Headings together */
-.brand-identity-box {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  max-width: 75%;
-}
-
-/* 📐 STRICT SQUARE LOGO WRAPPER */
-.logo-square-container {
-  width: 64px;       /* Set your preferred square dimension here */
-  height: 64px;
-  flex-shrink: 0;    /* Prevents the square from squeezing on narrow browser screens */
-  border-radius: 6px;
-  overflow: hidden;
-  background-color: #eaeaea; /* Light backdrop color for alpha transparency graphics */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.brand-logo-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Crops image cleanly if your uploaded asset is slightly off-square */
-}
-
-/* Fallback visualization container rules if the raw file asset path throws a 404 error */
-.logo-fallback-style {
-  border: 2px dashed #bbb;
-  position: relative;
-}
-.logo-fallback-style::after {
-  content: "Logo";
-  font-size: 0.75rem;
-  color: #888;
-  font-weight: bold;
-}
-
-/* Typography Spacing */
-.brand-text-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.organization-title {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-main);
-  letter-spacing: -0.02em;
-}
-
-.organization-mission {
-  margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  color: var(--text-muted);
-}
-
-/* Header Alignment Rules */
-.header-right-controls {
-  padding-top: 0.25rem;
-}
-
-/* Readjusting Toolbar Row to remove duplicate boxes */
-.navbar {
-  display: flex;
-  padding: 0.5rem 2rem;
-  background-color: #fcfcfc;
-  border-top: 1px solid #f0f0f0;
-  border-bottom: none;
-  box-shadow: none;
-}
-
-/* Dashboard Controls Box Layout */
-.video-controls-dashboard {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  background-color: #fcfcfc;
-  padding: 1rem 1.5rem;
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  margin-bottom: 1.5rem;
-}
-
-.control-group {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-/* Polished Interactive Buttons */
-.sort-toggle-btn {
-  background-color: var(--card-bg);
-  border: 1px solid #ccc;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  cursor: pointer;
-  color: var(--text-main);
-  transition: all 0.2s ease;
-}
-
-.sort-toggle-btn:hover {
-  background-color: #f0f0f0;
-  border-color: #999;
-}
-
-/* Active Tag Filter Indicator Row */
-.active-filter-status {
-  background-color: #e6f0ff;
-  border: 1px solid #b3d1ff;
-  border-radius: 4px;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.95rem;
-  color: #0044cc;
-}
-
-.clear-filter-btn {
-  background: none;
-  border: none;
-  color: #0044cc;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.clear-filter-btn:hover {
-  text-decoration: underline;
-}
-
-/* Badge Rows inside Cards */
-.video-card-meta-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.25rem;
-}
-
-.category-badge {
-  background-color: #f0f0f0;
-  color: var(--text-muted);
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  padding: 0.2rem 0.5rem;
-  border-radius: 3px;
-  letter-spacing: 0.05em;
-}
-
-.duration-badge {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  font-weight: 500;
-}
-
-.upload-date-stamp {
-  font-size: 0.8rem;
-  color: #888;
-  margin: 0 0 0.5rem 0;
-}
-
-/* Tag Pill Container and Individual Chips */
-.video-tag-cluster {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: auto; /* Pushes the tags to the very bottom of the card card container */
-  padding-top: 1rem;
-}
-
+/* ==========================================================================
+   4. REUSABLE UI ELEMENTS (Buttons, Pills, Form Controls)
+   ========================================================================== */
+/* Standalone Interactive Filter Tags */
 .tag-pill-btn {
-  background-color: #f9f9f9;
-  border: 1px solid #e0e0e0;
-  color: var(--primary-color);
+  background-color: #f0f2f5;
+  border: 1px solid #e4e6eb;
+  color: #0b3fa1; /* Deepened slightly to clear 4.5:1 contrast against gray pill */
   font-size: 0.8rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 12px;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
   cursor: pointer;
-  transition: all 0.15s ease;
+  transition: all var(--transition-fast);
 }
 
 .tag-pill-btn:hover {
@@ -326,135 +111,203 @@ button:focus-visible {
   border-color: #b3d1ff;
 }
 
-/* Highlighting state if a user selects a specific tag */
 .tag-pill-btn.active-tag {
-  background-color: var(--primary-color);
+  background-color: var(--brand-logo-orange);
   color: #ffffff;
-  border-color: var(--primary-color);
+  border-color: var(--brand-logo-orange);
   font-weight: bold;
 }
 
-/* Fallback Container Empty State Rules */
-.empty-results-fallback {
-  text-align: center;
-  padding: 3rem 1rem;
-  border: 2px dashed var(--border-color);
-  border-radius: 8px;
-  color: var(--text-muted);
-}
-
-.empty-results-fallback button {
-  margin-top: 1rem;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-/* Shared Global Page Wrapper to enforce consistent alignment */
-.page-container {
-  max-width: 1200px;  /* Keeps the website content from stretching infinitely on wide screens */
-  margin: 0 auto;     /* Centers the whole page container perfectly horizontally */
-  padding: 2.5rem 2rem; /* Enforces clean top/bottom breathing room and strict left/right margins */
-  box-sizing: border-box;
-}
-
-/* Add a bit of spacing between the video headers and your control dashboard */
-.videos-page .page-header {
-  margin-bottom: 1.75rem;
-}
-
-/* Vertical Stack spacing container adjustments */
-.videos-list-vertical-stack {
+/* Form Fields Styling */
+.form-field-group {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem; /* Generous breathing room between video entries */
+  gap: 0.4rem;
+}
+
+.form-field-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.form-field-group input,
+.form-field-group textarea,
+.control-dashboard-select {
+  width: 100%;
+  padding: 0.65rem;
+  border: 1px solid #ccc;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-family: inherit;
+  background-color: var(--card-bg);
+  color: var(--text-main);
+}
+
+.form-field-group input:focus,
+.form-field-group textarea:focus,
+.control-dashboard-select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(13, 74, 157, 0.15);
+}
+
+/* Global Action Button Base */
+.btn-action-primary {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  border: none;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+
+.btn-action-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+/* ==========================================================================
+   5. NAVIGATION COMPONENT
+   ========================================================================== */
+.navbar-element {
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.navbar-logo-img {
+  height: 40px;
+  width: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.navbar-title-text {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--brand-wordmark-blue);
+  letter-spacing: 0.02em;
+}
+
+.navbar-links-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary-color);
+}
+
+.lang-dropdown-menu {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 0.35rem 1.5rem 0.35rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   6. WIDESCREEN HORIZONTAL ROW COMPONENT (Used by Videos & Resources!)
+   ========================================================================== */
+.vertical-stack-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   margin-top: 1.5rem;
 }
 
-/* Outer Horizontal Card Framework structure */
-.video-horizontal-row-card {
+.horizontal-row-card {
   background-color: var(--card-bg);
   border: 1px solid var(--border-color);
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   padding: 1.5rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.02);
 }
 
-/* 1. TOP BLOCK: Full Width Title Layout */
-.video-row-header-block {
+.card-header-block {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   border-bottom: 1px solid #f4f4f4;
   padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
 }
 
-.video-row-title {
+.card-row-title {
   margin: 0;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  color: var(--text-main);
 }
 
-.video-row-category-badge {
-  background-color: #f0f2f5;
-  color: #555;
-  font-size: 0.75rem;
-  font-weight: bold;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  text-transform: uppercase;
-}
-
-/* 2. LOWER BLOCK: Media/Description Flexible Grid System Split */
-.video-row-main-split {
+.card-main-split {
   display: grid;
-  grid-template-columns: 420px 1fr; /* Strict sizing blueprint for crisp playback window */
+  grid-template-columns: 400px 1fr;
   gap: 1.75rem;
 }
 
-/* Media Quadrant & Thumbnail Aspect Ratio Rules */
-.video-row-media-quadrant {
-  position: relative;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-  background-color: #000;
+@media (max-width: 850px) {
+  .card-main-split {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
 }
 
-.video-row-embed-frame, .video-row-thumbnail-trigger-btn {
+/* Media/Thumbnail Area Inside Horizontal Card */
+.card-media-quadrant {
   position: relative;
-  width: 100%;
-  aspect-ratio: 16 / 9; /* Modern responsive aspect ratio wrapper blueprint rule */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: #000;
+  aspect-ratio: 16 / 9;
 }
 
 .video-row-thumbnail-trigger-btn {
+  width: 100%;
+  height: 100%;
   border: none;
   padding: 0;
   cursor: pointer;
+  position: relative;
 }
 
 .video-row-img-canvas {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
 }
 
-.video-row-thumbnail-trigger-btn:hover .video-row-img-canvas {
-  transform: scale(1.02); /* Subtle hover click signifier */
-}
-
-/* ⏱️ THE HOVER/OVERLAY TIME COUNTER STAMP */
 .video-row-duration-timestamp-overlay {
   position: absolute;
   bottom: 8px;
@@ -464,145 +317,106 @@ button:focus-visible {
   font-size: 0.75rem;
   font-weight: 600;
   padding: 0.2rem 0.4rem;
-  border-radius: 4px;
+  border-radius: var(--radius-sm);
   font-family: monospace;
-  letter-spacing: 0.02em;
 }
 
-/* Centered play button overlay asset icon */
-.video-row-play-overlay-icon {
-  position: absolute;
-  width: 52px;
-  height: 52px;
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.video-row-play-overlay-icon::after {
-  content: '';
-  margin-left: 4px;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 8px 0 8px 14px;
-  border-color: transparent transparent transparent #111;
-}
-
-.video-row-thumbnail-trigger-btn:hover .video-row-play-overlay-icon {
-  background-color: var(--primary-color, #0044cc);
-  transform: scale(1.1);
-}
-
-.video-row-thumbnail-trigger-btn:hover .video-row-play-overlay-icon::after {
-  border-left-color: #ffffff; /* Turns arrow icon white on button hover state */
-}
-
-.video-row-embed-frame iframe {
-  width: 100%;
-  height: 100%;
-}
-
-/* Right Quadrant Formatting Architecture */
-.video-row-text-details-quadrant {
+/* Content Text Area Inside Horizontal Card */
+.card-text-details-quadrant {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-.video-row-description-body {
+.card-description-body {
   margin: 0;
   font-size: 0.98rem;
   line-height: 1.5;
-  color: var(--text-main);
 }
 
-.video-row-date-stamp {
+.card-footer-meta {
   font-size: 0.85rem;
-  color: var(--text-muted, #666);
+  color: var(--text-muted);
   font-weight: 500;
 }
 
-.video-row-tag-cluster {
+/* Specific styling for resource and video publication dates */
+.video-row-date-stamp {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+}
+
+.card-tag-cluster {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-top: auto; /* Pushes tags cleanly down to align horizontally with the block base */
+  margin-top: auto;
   padding-top: 0.5rem;
 }
 
-/* Mobile Responsiveness View Adaptations */
-@media (max-width: 850px) {
-  .video-row-main-split {
-    grid-template-columns: 1fr; /* Collapse layout split completely flat into one vertical block columns on tablets/phones */
-    gap: 1.25rem;
+/* Contact Form split layout */
+/* Styles for standalone and split contact layouts */
+.contact-form-column {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 2.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+.contact-details-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 1rem;
+}
+
+@media (max-width: 650px) {
+  .contact-form-column {
+    padding: 1.5rem;
   }
 }
 
-/* Stack social link buttons cleanly */
-.social-links-container {
+/* ==========================================================================
+   7. INDEPENDENT UTILITY DASHBOARDS & FILTERS
+   ========================================================================== */
+.controls-dashboard-row {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  margin-top: 0.5rem;
-}
-
-.social-link-item {
-  display: inline-block;
-  background-color: var(--card-bg, #ffffff);
-  border: 1px solid var(--border-color, #e0e0e0);
-  padding: 0.5rem 0.75rem;
-  border-radius: 6px;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: all 0.15s ease;
-  width: fit-content;
-}
-
-.social-link-item:hover {
-  background-color: #f6f8fa;
-  border-color: #bbb;
-  text-decoration: none !important;
-}
-
-/* Give the pending Discord alert a soft callout background */
-.discord-teaser-box {
-  background-color: #fbfbfe;
-  border: 1px dashed #c0caeb;
-  padding: 1rem;
-  border-radius: 6px;
-}
-
-.discord-status-text {
-  font-size: 0.9rem !important;
-  color: #556270;
-  line-height: 1.4;
-}
-
-/* 1. This aligns the logo image and the 'MCC' text side-by-side vertically */
-.navbar-logo-link {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-  color: #111111; /* Or your main text color variable */
+  flex-wrap: wrap;
+  gap: 1rem;
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  margin-bottom: 1.5rem;
 }
 
-/* 2. THIS IS THE CRITICAL PART: This shrinks your image back down to earth */
-.navbar-logo-img {
-  height: 40px;       /* Forces the image height to fit perfectly inside the nav row */
-  width: auto;         /* Automatically maintains the image's original proportions so it doesn't look stretched or squished */
-  display: block;
-  object-fit: contain;
+.active-filter-status {
+  background-color: #e6f0ff;
+  border: 1px solid #b3d1ff;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--brand-wordmark-blue);
 }
 
-/* 3. Cleans up the 'MCC' text look right next to it */
-.navbar-title-text {
-  font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: 0.02em;
+.status-alert-box {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
+
+.status-alert-box.success { background-color: #e6f4ea; color: #137333; border: 1px solid #ceead6; }
+.status-alert-box.error { background-color: #fce8e6; color: #c5221f; border: 1px solid #fad2cf; }
+
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }

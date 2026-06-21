@@ -4,18 +4,18 @@ export default function VideoCard({ video, descKey, onTagClick, activeTagSearch 
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <article className="video-horizontal-row-card">
+    <article className="horizontal-row-card">
       {/* 1. Full-Width Structural Title Header Top Anchor */}
-      <header className="video-row-header-block">
-        <h3 className="video-row-title">{video.title}</h3>
+      <header className="card-header-block">
+        <h3 className="card-row-title">{video.title}</h3>
        {/* <span className="video-row-category-badge">{video.category}</span> */}
       </header>
 
       {/* 2. Lower Media & Details Horizontal Flex Split Frame */}
-      <div className="video-row-main-split">
+      <div className="card-main-split">
         
         {/* Left Quadrant: Media Playback Window */}
-        <div className="video-row-media-quadrant">
+        <div className="card-media-quadrant">
           {isPlaying ? (
             <div className="video-row-embed-frame">
               <iframe
@@ -53,21 +53,21 @@ export default function VideoCard({ video, descKey, onTagClick, activeTagSearch 
         </div>
 
         {/* Right Quadrant: Text Documentation Details */}
-        <div className="video-row-text-details-quadrant">
-          <p className="video-row-description-body">
+        <div className="card-text-details-quadrant">
+          <p className="card-description-body">
             {video[descKey] || video.desc_en || 'No description available for this catalog entry.'}
           </p>
 
           {/* Chronological Release Date Footer Stamp */}
-          <div className="video-row-footer-meta">
+          <div className="card-footer-meta">
             <time className="video-row-date-stamp" dateTime={video.upload_date_display}>
-              📅 Released: {video.upload_date_display || 'Unknown Date'}
+              {video.upload_date_display || ''}
             </time>
           </div>
 
           {/* Interactive Tag Cluster List */}
           {video.tags && video.tags.length > 0 && (
-            <div className="video-row-tag-cluster" aria-label="Related topic filters">
+            <div className="card-tag-cluster" aria-label="Related topic filters">
               {video.tags.map(tag => {
                 const isSelected = activeTagSearch?.toLowerCase() === tag.toLowerCase();
                 return (

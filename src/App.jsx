@@ -20,6 +20,7 @@ export default function App() {
             <Route path="/resources" element={<Resources />} />
             <Route path="/videos" element={<Videos />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/contact/message" element={<ContactFormPage />} />
           </Routes>
         </main>
 
