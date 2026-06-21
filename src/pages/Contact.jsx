@@ -16,8 +16,7 @@ export default function Contact() {
 
       <div className="contact-split-layout">
         {/* Pass your target email as a single prop configuration variable */}
-        <ContactChannels email="maldencommunitycoalition@gmail.com" />
-        <ContactForm />
+        <ContactChannelsCompenents />
       </div>
     </div>
   );
