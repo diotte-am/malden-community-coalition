@@ -38,23 +38,23 @@ export default function Navbar() {
 
         {/* Right Side: Navigation Menu Items & Multi-language Selector */}
         <div className="navbar-links-section">
-          <Link to="/" className={getLinkClass('/')}>
+          <Link to="/" className="nav-link">
             {t('nav.home', 'Home')}
           </Link>
           
-          <Link to="/resources" className={getLinkClass('/resources')}>
+          <Link to="/resources" className="nav-link">
             {t('nav.resources', 'Resources')}
           </Link>
 
-          <Link to="/videos" className={getLinkClass('/videos')}>
+          <Link to="/videos" className="nav-link">
             {t('nav.videos', 'Videos')}
           </Link>
 
-          <NavLink to="/staff" className={getLinkClass('/staff')}>
-            Staff
+          <NavLink to="/staff" className="nav-link">
+            {t('nav.staff', 'Staff')}
           </NavLink>
 
-          <Link to="/contact" className={getLinkClass('/contact')}>
+          <Link to="/contact" className="nav-link">
             {t('nav.contact', 'Contact')}
           </Link>
 
