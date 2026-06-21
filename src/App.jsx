@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Resources from './pages/Resources';
 import Videos from './pages/Videos';
 import Contact from './pages/Contact';
+import ContactFormPage from './pages/ContactFormPage';
 
 export default function App() {
   return (
