@@ -41,12 +41,16 @@ export default function Videos() {
 
   return (
     <div className="page-container videos-page">
-      <header className="page-header">
-        <h2>{t('videos.title', 'Video Series & Workshops')}</h2>
-        <p className="page-subtitle">{t('videos.subtitle', 'Watch our latest community informational series.')}</p>
+      <header className="page-hero-banner">
+        <div className="page-hero-content">
+          <h2>Community Video Library</h2>
+          <p className="page-subtitle">
+            Explore workshops, recorded coalition meetings, and advocacy resources.
+          </p>
+        </div>
       </header>
 
-      <div className="video-controls-dashboard">
+      <div className="page-container">
         {/* <div className="control-group">
           <label htmlFor="video-category-select">{t('videos.filter_label', 'Series:')}</label>
           <select id="video-category-select" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
@@ -56,17 +60,18 @@ export default function Videos() {
         <button className="sort-toggle-btn" onClick={() => setIsDescendingOrder(!isDescendingOrder)}>
           {isDescendingOrder ? '↓ Newest' : '↑ Oldest'}
         </button>
-      </div> 
+        {activeTagSearch && (
+          <div className="active-filter-status" role="status">
+            <span>Showing tags: <strong>#{activeTagSearch}</strong></span>
+            <button className="clear-filter-btn" onClick={() => setActiveTagSearch(null)}>✕ Clear Filter</button>
+          </div>
+        )}
 
-      {activeTagSearch && (
-        <div className="active-filter-status" role="status">
-          <span>Showing tags: <strong>#{activeTagSearch}</strong></span>
-          <button className="clear-filter-btn" onClick={() => setActiveTagSearch(null)}>✕ Clear Filter</button>
-        </div>
-      )}
+
+
 
       {/* Optimized Vertical Stack List Base */}
-      <div className="videos-list-vertical-stack">
+      <div className="vertical-stack-containser">
         {processedVideos.map(video => (
           <VideoCard 
             key={video.id}
@@ -81,5 +86,7 @@ export default function Videos() {
         ))}
       </div>
     </div>
+  
+  </div>
   );
 }
