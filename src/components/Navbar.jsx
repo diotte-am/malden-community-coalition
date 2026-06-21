@@ -26,37 +26,37 @@ export default function Navbar() {
         
         {/* Left Side: Interactive Logo & Brand Anchor */}
         <div className="navbar-brand-section">
-          <Link to="/" className="navbar-logo-link" aria-label="Malden Community Coalition Home">
+          <NavLink to="/" className="navbar-logo-link" aria-label="Malden Community Coalition Home">
             <img 
               src={mccLogo} 
               alt="Malden Community Coalition Logo" 
               className="navbar-logo-img" 
             />
             <span className="navbar-title-text">MCC</span>
-          </Link>
+          </NavLink>
         </div>
 
         {/* Right Side: Navigation Menu Items & Multi-language Selector */}
         <div className="navbar-links-section">
-          <Link to="/" className="nav-link">
+          <NavLink to="/" className="nav-link">
             {t('nav.home', 'Home')}
-          </Link>
+          </NavLink>
           
-          <Link to="/resources" className="nav-link">
+          <NavLink to="/resources" className="nav-link">
             {t('nav.resources', 'Resources')}
-          </Link>
+          </NavLink>
 
-          <Link to="/videos" className="nav-link">
+          <NavLink to="/videos" className="nav-link">
             {t('nav.videos', 'Videos')}
-          </Link>
+          </NavLink>
 
           <NavLink to="/staff" className="nav-link">
             {t('nav.staff', 'Staff')}
           </NavLink>
 
-          <Link to="/contact" className="nav-link">
+          <NavLink to="/contact" className="nav-link">
             {t('nav.contact', 'Contact')}
-          </Link>
+          </NavLink>
 
           {/* Accessible Dropdown Language Menu Selector */}
           <div className="lang-select-wrapper">
