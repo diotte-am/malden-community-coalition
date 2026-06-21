@@ -50,6 +50,10 @@ export default function Navbar() {
             {t('nav.videos', 'Videos')}
           </Link>
 
+          <NavLink to="/staff" className={getLinkClass('/staff')}>
+            Staff
+          </NavLink>
+
           <Link to="/contact" className={getLinkClass('/contact')}>
             {t('nav.contact', 'Contact')}
           </Link>

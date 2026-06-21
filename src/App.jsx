@@ -7,6 +7,7 @@ import Resources from './pages/Resources';
 import Videos from './pages/Videos';
 import Contact from './pages/Contact';
 import ContactFormPage from './pages/ContactFormPage';
+import Staff from './pages/Staff';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="/videos" element={<Videos />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/contact/message" element={<ContactFormPage />} />
+            <Route path="/team" element={<Staff />} />
           </Routes>
         </main>
 
