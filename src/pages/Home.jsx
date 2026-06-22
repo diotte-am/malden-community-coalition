@@ -20,7 +20,7 @@ export default function Home() {
   };
 
   return (
-    <div className="homepage" style={{ maxWidth: '1000px', margin: '0 auto', padding: '2rem', fontFamily: 'sans-serif' }}>
+    <>
       
       {/* Hero Header Section */}
       <header style={{ textAlign: 'center', margin: '3rem 0' }}>
@@ -75,6 +75,6 @@ export default function Home() {
         </aside>
 
       </div>
-    </div>
+    </>
   );
 }

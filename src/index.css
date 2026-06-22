@@ -146,10 +146,14 @@ box-sizing-base, *, *::before, *::after {
 .form-field-group input:focus,
 .form-field-group textarea:focus,
 .control-dashboard-select:focus {
-  border-color: var(--primary-color);
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(13, 74, 157, 0.15);
-}
+  .form-field-group input:focus,
+  .form-field-group textarea:focus,
+  .control-dashboard-select:focus {
+    border-color: var(--brand-logo-orange);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(235, 138, 13, 0.15); 
+  }
+  }
 
 /* Global Action Button Base */
 .btn-action-primary {
@@ -165,7 +169,8 @@ box-sizing-base, *, *::before, *::after {
 }
 
 .btn-action-primary:hover {
-  background-color: var(--primary-hover);
+  background-color: var(--brand-logo-orange); /* Swaps from blue to #eb8a0d on hover */
+  cursor: pointer;
 }
 
 /* ==========================================================================
@@ -223,8 +228,15 @@ box-sizing-base, *, *::before, *::after {
   transition: color var(--transition-fast);
 }
 
-.nav-link:hover, .nav-link.active {
-  color: var(--primary-color);
+.nav-link:hover {
+  color: var(--brand-logo-orange);
+}
+
+/* Keep the active page highlighted in your brand blue */
+.nav-link.active {
+  color: var(--brand-wordmark-blue);
+  border-bottom: 2px solid var(--brand-logo-orange); 
+  padding-bottom: 4px;
 }
 
 .lang-dropdown-menu {

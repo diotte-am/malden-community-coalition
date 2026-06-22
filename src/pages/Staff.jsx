@@ -23,8 +23,7 @@ const staffMembers = [
 
 export default function Staff() {
   return (
-    <div className="staff-page-wrapper">
-      
+    <>
       {/* Heritage Gradient Banner */}
       <header className="page-hero-banner">
         <div className="page-hero-content">
@@ -44,6 +43,6 @@ export default function Staff() {
         </div>
       </main>
 
-    </div>
+    </>
   );
 }

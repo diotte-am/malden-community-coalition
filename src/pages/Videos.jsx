@@ -40,7 +40,7 @@ export default function Videos() {
   }, [selectedCategory, activeTagSearch, isDescendingOrder]);
 
   return (
-    <div className="page-container videos-page">
+    <>
       <header className="page-hero-banner">
         <div className="page-hero-content">
           <h2>Community Video Library</h2>
@@ -87,6 +87,6 @@ export default function Videos() {
       </div>
     </div>
   
-  </div>
+  </>
   );
 }
