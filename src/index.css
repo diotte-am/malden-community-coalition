@@ -36,6 +36,11 @@ body {
   line-height: 1.5;
 }
 
+/* Prevents layout shifting between short and long pages by locking the scrollbar space */
+html {
+  scrollbar-gutter: stable;
+}
+
 box-sizing-base, *, *::before, *::after {
   box-sizing: border-box;
 }
