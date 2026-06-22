@@ -66,26 +66,32 @@ export default function Videos() {
             <button className="clear-filter-btn" onClick={() => setActiveTagSearch(null)}>✕ Clear Filter</button>
           </div>
         )}
-
-
-
-
-      {/* Optimized Vertical Stack List Base */}
-      <div className="vertical-stack-containser">
-        {processedVideos.map(video => (
-          <VideoCard 
-            key={video.id}
-            video={video}
-            descKey={descKey}
-            activeTagSearch={activeTagSearch}
-            onTagClick={(tag) => {
-              if (activeTagSearch?.toLowerCase() === tag.toLowerCase()) setActiveTagSearch(null);
-              else setActiveTagSearch(tag);
-            }}
-          />
-        ))}
       </div>
-    </div>
+
+
+
+
+      <main className='"page-container'>
+        {/* Optimized Vertical Stack List Base */}
+        <div className="vertical-stack-containser">
+          {processedVideos.map(video => (
+            <VideoCard 
+              key={video.id}
+              video={video}
+              descKey={descKey}
+              activeTagSearch={activeTagSearch}
+              onTagClick={(tag) => {
+                if (activeTagSearch?.toLowerCase() === tag.toLowerCase()) setActiveTagSearch(null);
+                else setActiveTagSearch(tag);
+              }}
+            />
+          ))}
+        </div>
+
+
+
+      </main>
+
   
   </>
   );
