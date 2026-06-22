@@ -25,6 +25,14 @@
   --decorative-gradient: linear-gradient(135deg, #f9f9e7 0%, #b0f3fd 100%);
 }
 
+CSS
+/* Force the primary layout views to never exceed the screen frame */
+#root, .site-page-layout {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden; /* Clips any component that tries to bulge past the right side */
+}
+
 /* ==========================================================================
    2. GLOBAL RESET & BASE RULES
    ========================================================================== */
