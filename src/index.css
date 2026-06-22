@@ -25,17 +25,15 @@
   --decorative-gradient: linear-gradient(135deg, #f9f9e7 0%, #b0f3fd 100%);
 }
 
-CSS
-/* Force the primary layout views to never exceed the screen frame */
-#root, .site-page-layout {
-  width: 100%;
-  max-width: 100vw;
-  overflow-x: hidden; /* Clips any component that tries to bulge past the right side */
-}
-
 /* ==========================================================================
    2. GLOBAL RESET & BASE RULES
    ========================================================================== */
+
+/* Forces the browser to always display the vertical scroll container track */
+html {
+  overflow-y: scroll;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -44,10 +42,6 @@ body {
   line-height: 1.5;
 }
 
-/* Prevents layout shifting between short and long pages by locking the scrollbar space */
-html {
-  scrollbar-gutter: stable;
-}
 
 box-sizing-base, *, *::before, *::after {
   box-sizing: border-box;
