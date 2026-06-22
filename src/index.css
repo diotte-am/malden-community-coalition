@@ -402,8 +402,9 @@ box-sizing-base, *, *::before, *::after {
 
 .card-description-body {
   margin: 0;
-  font-size: 0.98rem;
+  font-size: 1rem;
   line-height: 1.5;
+  max-width: 72ch;
 }
 
 .card-footer-meta {
