@@ -51,12 +51,6 @@ export default function Videos() {
       </header>
 
       <div className="page-container">
-        {/* <div className="control-group">
-          <label htmlFor="video-category-select">{t('videos.filter_label', 'Series:')}</label>
-          <select id="video-category-select" value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
-            {uniqueCategories.map(cat => <option key={cat} value={cat}>{cat}</option>)}
-          </select>
-        </div>*/}
         <button className="sort-toggle-btn" onClick={() => setIsDescendingOrder(!isDescendingOrder)}>
           {isDescendingOrder ? '↓ Newest' : '↑ Oldest'}
         </button>
@@ -68,12 +62,8 @@ export default function Videos() {
         )}
       </div>
 
-
-
-
-      <main className='"page-container'>
-        {/* Optimized Vertical Stack List Base */}
-        <div className="vertical-stack-containser">
+      <main className="page-container">
+        <div className="vertical-stack-container">
           {processedVideos.map(video => (
             <VideoCard 
               key={video.id}
@@ -87,12 +77,7 @@ export default function Videos() {
             />
           ))}
         </div>
-
-
-
       </main>
-
-  
-  </>
+    </>
   );
 }

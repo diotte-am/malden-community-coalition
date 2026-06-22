@@ -551,3 +551,11 @@ box-sizing-base, *, *::before, *::after {
   flex-direction: column;
   gap: 1rem;
 }
+
+/* Fixes video quadrant sizing constraints on large viewport frames */
+@media (min-width: 768px) {
+  .card-media-window-frame {
+    flex: 0 0 320px;
+    width: 320px;
+  }
+}

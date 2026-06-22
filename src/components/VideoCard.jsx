@@ -5,25 +5,26 @@ export default function VideoCard({ video, descKey, onTagClick, activeTagSearch 
 
   return (
     <article className="horizontal-row-card">
-      <div className="card-content-stack"> 
+      <div className='card-content-stack'> 
 
         <header className="card-header-row">
           <h3 className="card-title-highlight">{video.title}</h3>
           <span className="card-meta-badge">{video.category}</span>
         </header>
 
-        <hr className="card-divider-line" />
+        <hr className='card-divider-line'/>
 
-        {/* Managed responsively by global flex split layout definitions */}
+        {/* Lower Media & Details Horizontal Flex Split Frame */}
         <div className="card-main-split">
           
-          {/* Left Quadrant: Media Playback Window */}
-          <div className="card-body-block">
+          {/* Left Quadrant: Dedicated Media Window class */}
+          <div className="card-media-window-frame">
             {isPlaying ? (
               <div className="video-row-embed-frame">
                 <iframe
                   src={`https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&modestbranding=1&rel=0&showinfo=0`}
                   title={video.title}
+                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
@@ -51,18 +52,32 @@ export default function VideoCard({ video, descKey, onTagClick, activeTagSearch 
             )}
           </div>
 
-          {/* Right Quadrant: Text Documentation Details */}
+          {/* Right Quadrant: Text Documentation Details with explicit internal gap styling */}
           <div className="card-text-details-quadrant">
             <p className="card-description-body">
               {video[descKey] || video.desc_en || 'No description available for this catalog entry.'}
             </p>
 
             <div className="card-footer-meta">
-              <time dateTime={video.upload_date_display}>
+              <time className="video-row-date-stamp" dateTime={video.upload_date_display}>
                 {video.upload_date_display || ''}
               </time>
             </div>
 
+            {/* RESTORED: The explicit action portal link matching your shared styling schema */}
+            <div style={{ marginTop: '0.25rem' }}>
+              <a 
+                href={`https://www.youtube.com/watch?v=${video.youtubeId}`}
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn-action-primary"
+                style={{ display: 'inline-block', textDecoration: 'none', textAlign: 'center' }}
+              >
+                Watch on YouTube ↗
+              </a>
+            </div>
+
+            {/* Interactive Tag Cluster List */}
             {video.tags && video.tags.length > 0 && (
               <div className="card-tag-cluster" aria-label="Related topic filters">
                 {video.tags.map(tag => {
