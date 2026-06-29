@@ -85,7 +85,7 @@ export default function Videos() {
 
         {/* Active Tag Highlight Status Strip */}
         {activeTagSearch && (
-          <div className="active-filter-status" role="status" style={{ marginBottom: '1.5rem' }}>
+          <div className="active-filter-status" role="status">
             <span>Showing tags: <strong>#{activeTagSearch}</strong></span>
             <button className="clear-filter-btn" onClick={() => setActiveTagSearch(null)}>✕ Clear Filter</button>
           </div>
@@ -101,14 +101,17 @@ export default function Videos() {
                 descKey={descKey}
                 activeTagSearch={activeTagSearch}
                 onTagClick={(tag) => {
-                  if (activeTagSearch?.toLowerCase() === tag.toLowerCase()) setActiveTagSearch(null);
-                  else setActiveTagSearch(tag);
+                  if (activeTagSearch?.toLowerCase() === tag.toLowerCase()) {
+                    setActiveTagSearch(null);
+                  } else {
+                    setActiveTagSearch(tag);
+                  }
                 }}
               />
             ))
           ) : (
-            <div style={{ textAlign: 'center', color: '#888', padding: '3rem' }}>
-              No videos match your search criteria.
+            <div className="catalog-empty-state">
+              {t('videos.no_results', 'No videos match your search criteria.')}
             </div>
           )}
         </div>
