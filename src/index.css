@@ -618,3 +618,59 @@ box-sizing-base, *, *::before, *::after {
     width: 320px;
   }
 }
+
+/* --- News Page Layout Elements --- */
+.news-page-hero {
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.news-page-hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.news-page-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--brand-wordmark-blue, #0d3b66);
+  margin: 0 0 0.5rem 0;
+}
+
+.news-page-subtitle {
+  font-size: 1.15rem;
+  color: #333333;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.news-main-content {
+  padding-bottom: 3rem;
+}
+
+.news-list-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.news-empty-state {
+  text-align: center;
+  color: #666666;
+  padding: 4rem 1rem;
+}
+
+/* Modifiers to give the full news page cards an expansive layout */
+.news-full-view .news-preview-card {
+  padding: 1.5rem;
+}
+
+.news-full-view .news-preview-title {
+  font-size: 1.25rem;
+}
+
+.news-full-view .news-preview-stack {
+  gap: 0.5rem;
+}

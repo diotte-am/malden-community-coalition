@@ -76,28 +76,29 @@ export default function VideoCard({ video, descKey, onTagClick, activeTagSearch 
                 Watch on YouTube ↗
               </a>
             </div>
-
-            {/* Interactive Tag Cluster List */}
-            {video.tags && video.tags.length > 0 && (
-              <div className="card-tag-cluster" aria-label="Related topic filters">
-                {video.tags.map(tag => {
-                  const isSelected = activeTagSearch?.toLowerCase() === tag.toLowerCase();
-                  return (
-                    <button
-                      key={tag}
-                      className={`tag-pill-btn ${isSelected ? 'active-tag' : ''}`}
-                      onClick={() => onTagClick(tag)}
-                      aria-pressed={isSelected}
-                    >
-                      #{tag}
-                    </button>
-                  );
-                })}
-              </div>
-            )}
           </div>
 
         </div>
+
+        {/* MOVED: Placed here so it spans the entire width of the card below the split panel */}
+        {video.tags && video.tags.length > 0 && (
+          <div className="card-tag-cluster" aria-label="Related topic filters" style={{ width: '100%' }}>
+            {video.tags.map(tag => {
+              const isSelected = activeTagSearch?.toLowerCase() === tag.toLowerCase();
+              return (
+                <button
+                  key={tag}
+                  className={`tag-pill-btn ${isSelected ? 'active-tag' : ''}`}
+                  onClick={() => onTagClick(tag)}
+                  aria-pressed={isSelected}
+                >
+                  #{tag}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
       </div>
     </article>
   );
