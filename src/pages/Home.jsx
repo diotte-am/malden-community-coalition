@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 // Load data structures directly
@@ -83,9 +83,9 @@ export default function Home() {
           </form>
 
           <div className="search-footer-quicklink">
-            <Link to="/resources">
+            <NavLink to="/resources">
               Browse all community resources →
-            </Link>
+            </NavLink>
           </div>
         </section>
 
@@ -160,9 +160,9 @@ export default function Home() {
                 <div><strong>Office:</strong> Malden, MA 02148</div>
               </div>
               <div className="sidebar-action-container">
-                <Link to="/contact" className="card-flush-footer-link">
+                <NavLink to="/contact" className="card-flush-footer-link">
                   See contact details →
-                </Link>
+                </NavLink>
               </div>
             </div>
           </aside>

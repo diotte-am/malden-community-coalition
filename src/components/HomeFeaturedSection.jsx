@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 /**
  * Reusable Featured Content Section Wrapper Component
  * Eliminates repetitive layout trees, flush borders, and link actions
@@ -10,9 +11,9 @@ export default function HomeFeaturedSection({ title, linkTo, linkText, children 
       <div className="unified-card-group">
         {children}
         <div className="card-flush-footer">
-          <Link to={linkTo} className="card-flush-footer-link">
+          <NavLink to={linkTo} className="card-flush-footer-link">
             {linkText}
-          </Link>
+          </NavLink>
         </div>
       </div>
     </section>

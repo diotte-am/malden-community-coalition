@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function ContactComponents() {
   return (
@@ -55,9 +55,9 @@ export default function ContactComponents() {
           <p className="card-description-body" style={{ color: 'var(--text-muted)' }}>
             Use our secure online form to drop us a message regarding partnerships, volunteering, or general questions.
           </p>
-          <Link to="/contact/message" className="btn-action-primary" style={{ textDecoration: 'none' }}>
+          <NavLink to="/contact/message" className="btn-action-primary" style={{ textDecoration: 'none' }}>
             Open Contact Form
-          </Link>
+          </NavLink>
         </section>
 
       </div>
