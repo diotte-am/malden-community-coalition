@@ -1,25 +1,8 @@
 import React from 'react';
 import StaffCard from '../components/StaffCard';
 
-// Sample Local Data Tree
-const staffMembers = [
-  {
-    id: 1,
-    name: "Alex Martinez",
-    role: "Executive Director",
-    bio: "Alex has over a decade of experience in community organizing and public policy. Born and raised in Malden, they are dedicated to building sustainable partnerships that amplify local grassroots voices.",
-    email: "alex@maldencommunitycoalition.org",
-    tags: ["Leadership", "Policy", "Partnerships"]
-  },
-  {
-    id: 2,
-    name: "Sarah Jenkins",
-    role: "Program & Volunteer Coordinator",
-    bio: "Sarah manages our community workshops, direct outreach initiatives, and volunteer cohorts. She coordinates logistics across our diverse local projects to ensure every voice is supported.",
-    email: "sarah@maldencommunitycoalition.org",
-    tags: ["Outreach", "Volunteering", "Workshops"]
-  }
-];
+// Load the modular staff data directly from your data folder
+import staffMembers from '../data/staff.json';
 
 export default function Staff() {
   return (
@@ -42,7 +25,6 @@ export default function Staff() {
           ))}
         </div>
       </main>
-
     </>
   );
 }

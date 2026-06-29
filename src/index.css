@@ -82,6 +82,17 @@ box-sizing-base, *, *::before, *::after {
   margin: 0;
 }
 
+/* Flipping the hero text to high-contrast brand dark blue */
+.page-hero-banner .page-hero-content h1 {
+  color: var(--brand-wordmark-blue, #0d3b66) !important;
+  text-shadow: none !important;
+}
+
+.page-hero-banner .page-subtitle {
+  color: #333333 !important;
+  font-weight: 500;
+}
+
 /* Reusable Horizontal Split Layout (Great for contact pages or split text/media) */
 .layout-split-twocol {
   display: grid;
@@ -502,6 +513,47 @@ box-sizing-base, *, *::before, *::after {
 .status-alert-box.error { background-color: #fce8e6; color: #c5221f; border: 1px solid #fad2cf; }
 
 .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* Restoring the signature soft-blue color accent backdrop to your search box */
+.search-accent-container {
+  background-color: #f0f7ff; 
+  border: 1px solid #d0e4ff;
+  border-radius: 8px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Global simple text-link footer utility layout */
+.site-footer-wrapper {
+  border-top: 1px solid var(--border-color, #eee);
+  padding: 2rem 0;
+  margin-top: 5rem;
+  background-color: #ffffff;
+}
+
+.footer-nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-links-track {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-text-link {
+  font-size: 0.85rem;
+  color: #666666;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-text-link:hover {
+  color: var(--brand-logo-orange);
+}
 
 /* ==========================================================================
    SHARED CARD ARCHITECTURE

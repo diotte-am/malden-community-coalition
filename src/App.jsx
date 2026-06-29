@@ -8,6 +8,7 @@ import Videos from './pages/Videos';
 import Contact from './pages/Contact';
 import ContactFormPage from './pages/ContactFormPage';
 import Staff from './pages/Staff';
+import News from './pages/News';
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <main id="main-content">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/news" element={<News />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/videos" element={<Videos />} />
             <Route path="/contact" element={<Contact />} />
