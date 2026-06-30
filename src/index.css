@@ -69,19 +69,6 @@ box-sizing-base, *, *::before, *::after {
   margin: 0 auto;
 }
 
-.page-hero-content h2 {
-  font-size: 2.25rem;
-  color: var(--brand-wordmark-blue);
-  margin: 0 0 0.5rem 0;
-  font-weight: 700;
-}
-
-.page-subtitle {
-  color: var(--text-muted);
-  font-size: 1.1rem;
-  margin: 0;
-}
-
 /* Reusable Horizontal Split Layout (Great for contact pages or split text/media) */
 .layout-split-twocol {
   display: grid;
@@ -609,30 +596,6 @@ box-sizing-base, *, *::before, *::after {
 }
 
 /* --- News Page Layout Elements --- */
-.news-page-hero {
-  padding: 3rem 1.5rem;
-  text-align: center;
-}
-
-.news-page-hero-inner {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.news-page-title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--brand-wordmark-blue, #0d3b66);
-  margin: 0 0 0.5rem 0;
-}
-
-.news-page-subtitle {
-  font-size: 1.15rem;
-  color: #333333;
-  max-width: 600px;
-  margin: 0 auto;
-  font-weight: 500;
-}
 
 .news-main-content {
   padding-bottom: 3rem;
@@ -731,9 +694,18 @@ box-sizing-base, *, *::before, *::after {
 
 /* --- Unified Heritage Page Hero Banner Architecture --- */
 
+
+.page-hero-content h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--brand-wordmark-blue, #0d3b66);
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.5px;
+}
+
 .page-subtitle {
   font-size: 1.15rem;
-  color: #333333;
+  color: var(--text-muted);
   max-width: 650px;
   margin: 0 auto;
   font-weight: 500;

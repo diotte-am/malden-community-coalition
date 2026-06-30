@@ -1,5 +1,6 @@
 import React from 'react';
 import StaffCard from '../components/StaffCard';
+import { useTranslation } from 'react-i18next';
 
 // Load the modular staff data directly from your data folder
 import staffMembers from '../data/staff.json';
