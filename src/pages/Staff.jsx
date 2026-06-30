@@ -8,6 +8,7 @@ import PageHero from '../components/PageHero';
 
 
 export default function Staff() {
+  const { t, i18n } = useTranslation();
   return (
     <>
       <PageHero 
