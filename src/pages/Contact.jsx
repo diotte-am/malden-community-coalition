@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactComponents from '../components/ContactComponents';
+import PageHero from '../components/PageHero';
 
 export default function Contact() {
   return (

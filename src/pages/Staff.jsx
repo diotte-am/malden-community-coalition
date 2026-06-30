@@ -3,6 +3,8 @@ import StaffCard from '../components/StaffCard';
 
 // Load the modular staff data directly from your data folder
 import staffMembers from '../data/staff.json';
+import PageHero from '../components/PageHero';
+
 
 export default function Staff() {
   return (

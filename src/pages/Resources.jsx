@@ -6,6 +6,8 @@ import Fuse from 'fuse.js';
 // Load single data storage file and child card item
 import resourceData from '../data/resources.json';
 import ResourceCard from '../components/ResourceCard';
+import PageHero from '../components/PageHero';
+
 
 export default function Resources() {
   const { t, i18n } = useTranslation();

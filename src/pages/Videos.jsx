@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import VideoCard from '../components/VideoCard';
 import FilterDashboard from '../components/FilterDashboard'; // 1. IMPORT THE NEW DASHBOARD
 import rawVideoData from '../data/videos.json';
+import PageHero from '../components/PageHero';
+
 
 const videoData = rawVideoData.filter(item => item && item.id && item.youtubeId);
 
