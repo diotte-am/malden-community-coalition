@@ -82,17 +82,6 @@ box-sizing-base, *, *::before, *::after {
   margin: 0;
 }
 
-/* Flipping the hero text to high-contrast brand dark blue */
-.page-hero-banner .page-hero-content h1 {
-  color: var(--brand-wordmark-blue, #0d3b66) !important;
-  text-shadow: none !important;
-}
-
-.page-hero-banner .page-subtitle {
-  color: #333333 !important;
-  font-weight: 500;
-}
-
 /* Reusable Horizontal Split Layout (Great for contact pages or split text/media) */
 .layout-split-twocol {
   display: grid;
@@ -741,24 +730,6 @@ box-sizing-base, *, *::before, *::after {
 }
 
 /* --- Unified Heritage Page Hero Banner Architecture --- */
-.page-hero-banner {
-  padding: 3.5rem 1.5rem;
-  text-align: center;
-  background: var(--hero-gradient, linear-gradient(135deg, #f0f4f8, #e2ebf0)); /* Uses your design tokens */
-}
-
-.page-hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.page-hero-content h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--brand-wordmark-blue, #0d3b66);
-  margin: 0 0 0.75rem 0;
-  letter-spacing: -0.5px;
-}
 
 .page-subtitle {
   font-size: 1.15rem;
