@@ -11,6 +11,7 @@ import resourceData from '../data/resources.json';
 import VideoCard from '../components/VideoCard';
 import ResourceCard from '../components/ResourceCard';
 import HomeFeaturedSection from '../components/HomeFeaturedSection';
+import PageHero from '../components/PageHero';
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -49,17 +50,10 @@ export default function Home() {
 
   return (
     <>
-      {/* 1. Large Heritage Gradient Banner */}
-      <header className="page-hero-banner home-page-hero">
-        <div className="home-hero-inner">
-          <h1 className="home-hero-title">
-            Malden Community Coalition
-          </h1>
-          <p className="home-hero-subtitle">
-            A coalition of communities uniting our strengths to build resilient support networks for neighbors of all backgrounds.
-          </p>
-        </div>
-      </header>
+      <PageHero 
+        title="Malden Community Coalition" 
+        subtitle="A coalition of communities uniting our strengths to build resilient support networks for neighbors of all backgrounds." 
+      />
 
       {/* Primary Shared Bound Margin Container */}
       <main className="page-container home-search-panel">

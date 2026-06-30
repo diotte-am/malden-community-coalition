@@ -6,23 +6,17 @@ import newsData from '../data/news.json';
 
 // Import our newly created card component
 import NewsCard from '../components/NewsCard';
+import PageHero from '../components/PageHero';
 
 export default function News() {
   const { t } = useTranslation();
 
   return (
     <>
-      {/* Heritage Sub-Page Banner Layout matching your brand standards */}
-      <header className="page-hero-banner news-page-hero">
-        <div className="page-hero-content news-page-hero-inner">
-          <h1 className="news-page-title">
-            {t('news.page_title', 'Latest News & Events')}
-          </h1>
-          <p className="page-subtitle news-page-subtitle">
-            {t('news.page_subtitle', 'Stay updated with upcoming meetings, resource rollouts, and local coalition announcements.')}
-          </p>
-        </div>
-      </header>
+      <PageHero 
+        title={t('staff.page_title', 'Our Team')} 
+        subtitle={t('staff.page_subtitle', 'Meet the dedicated staff members working behind the scenes to advocate for the Malden community.')} 
+      />
 
       {/* Main Content Grid Area */}
       <main className="page-container news-main-content">

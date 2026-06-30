@@ -61,12 +61,11 @@ export default function Resources() {
   return (
     <>
       {/* Heritage Gradient Banner matches the team and video view exactly */}
-      <header className="page-hero-banner">
-        <div className="page-hero-content">
-          <h2>{t('resources.title')}</h2>
-          <p className="page-subtitle">{t('resources.subtitle')}</p>
-        </div>
-      </header>
+
+      <PageHero 
+        title={t('resources.title', 'Our Team')} 
+        subtitle={t('resources.subtitle')} 
+      />
       
       {/* Bounded primary site container */}
       <main className="page-container">

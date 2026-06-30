@@ -4,22 +4,14 @@ import ContactComponents from '../components/ContactComponents';
 export default function Contact() {
   return (
     <>
-      <header className="page-hero-banner">
-        <div className="page-hero-content">
-          <h2>Contact Us</h2>
-          <p className="page-subtitle">
-            Connect with us in a number of ways.
-          </p>
-        </div>
-      </header>
-
-
-
+      <PageHero 
+        title={t('contact.page_title', 'Contact Us')} 
+        subtitle={t('contact.page_subtitle', 'Connect with us in a number of ways.')} 
+      />
+      
       <div className="page-container">
         <ContactComponents />
       </div>
-    
     </>
-
   );
 }

@@ -59,14 +59,10 @@ export default function Videos() {
   return (
     <>
       {/* Full-Width Heritage Gradient Banner */}
-      <header className="page-hero-banner">
-        <div className="page-hero-content">
-          <h2>Community Video Library</h2>
-          <p className="page-subtitle">
-            Explore workshops, recorded coalition meetings, and advocacy resources.
-          </p>
-        </div>
-      </header>
+      <PageHero 
+        title={t('videos.page_title', 'Community Video Library')} 
+        subtitle={t('videos.page_subtitle', 'Explore workshops, recorded coalition meetings, and advocacy resources.')} 
+      />
 
       <main className="page-container">
         
