@@ -1,8 +1,11 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next'; 
 import ContactComponents from '../../components/ContactComponents';
 import PageHero from '../../components/PageHero';
 
 export default function Contact() {
+  const { t } = useTranslation(); 
+
   return (
     <>
       <PageHero 
