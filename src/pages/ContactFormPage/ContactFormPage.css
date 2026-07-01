@@ -1,0 +1,27 @@
+/* Center and constrain the form page container */
+.contact-form-container {
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.contact-form-heading {
+  font-size: 1.8rem;
+  margin-top: 0;
+  color: var(--brand-wordmark-blue, #0d3b66);
+}
+
+.contact-form-subtitle {
+  margin-bottom: 2rem;
+  color: var(--text-muted, #64748b);
+}
+
+/* Stacked input items formatting track */
+.contact-message-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-submit-wrapper {
+  padding-top: 0.5rem;
+}

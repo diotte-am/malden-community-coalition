@@ -1,0 +1,30 @@
+/* Scoped Resources Control Dashboard Panel Layout */
+.resources-control-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.resources-search-input {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color, #e0e0e0);
+  min-width: 250px;
+}
+
+.resources-category-select {
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color, #e0e0e0);
+  min-width: 180px;
+}
+
+/* Page Empty State Message */
+.resources-empty-state {
+  text-align: center;
+  color: #888888;
+  padding: 3rem;
+  font-size: 1.05rem;
+}

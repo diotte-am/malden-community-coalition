@@ -1,0 +1,11 @@
+/* Scoped Staff Page Layout Elements */
+.staff-page-main {
+  padding-bottom: 4rem;
+}
+
+.staff-list-layout {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}

@@ -1,0 +1,20 @@
+/* Scoped Resource Card Elements */
+.resource-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.resource-email-anchor {
+  display: inline;
+}
+
+.resource-action-container {
+  margin-top: 0.25rem;
+}
+
+.resource-visit-btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}

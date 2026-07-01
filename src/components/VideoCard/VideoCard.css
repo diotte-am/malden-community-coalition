@@ -1,0 +1,30 @@
+/* Scoped Video Card Architecture */
+.video-card-action-row {
+  margin-top: 0.25rem;
+}
+
+.video-card-youtube-btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+}
+
+.video-card-full-width-tags {
+  width: 100%;
+}
+
+/* Base structural support safely handled locally */
+.video-row-embed-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.video-row-embed-frame iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}

@@ -1,0 +1,112 @@
+/* Scoped Home Page Dashboard Styles */
+.home-search-panel {
+  margin-top: -2rem; /* Pull up overlay slightly over the hero if desired */
+  position: relative;
+  z-index: 10;
+}
+
+.search-accent-container {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2ebf0);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.search-panel-heading {
+  font-size: 1.35rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--text-main, #333);
+}
+
+.home-search-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.home-search-input {
+  flex: 1;
+  min-width: 240px;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color, #cbd5e1);
+  border-radius: 4px;
+}
+
+.home-search-submit-btn {
+  padding: 0.75rem 1.5rem;
+}
+
+.search-footer-quicklink {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.search-footer-quicklink a {
+  text-decoration: none;
+  color: var(--brand-orange, #e65c00);
+  font-weight: 500;
+}
+
+/* Main Split Grid Tracks */
+.card-main-split {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .card-main-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home-main-content-column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* News Previews */
+.news-preview-card {
+  margin-bottom: 0.75rem;
+}
+
+.news-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Sidebar Specific Layouts */
+.home-sticky-sidebar {
+  position: sticky;
+  top: 2rem;
+}
+
+.sidebar-title {
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem 0;
+}
+
+.sidebar-divider {
+  border: 0;
+  border-top: 1px solid var(--border-color, #e2ebf0);
+  margin: 1rem 0;
+}
+
+.sidebar-contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.sidebar-action-container {
+  margin-top: 1.25rem;
+}

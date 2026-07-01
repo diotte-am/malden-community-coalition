@@ -1,0 +1,99 @@
+/* Global Header Element Layout */
+.navbar-element {
+  background-color: var(--navbar-bg, #ffffff);
+  border-bottom: 1px solid var(--border-color, #e2ebf0);
+  padding: 0.75rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Flex Container Constraints */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* Left Alignment Grouping */
+.navbar-brand-section {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navbar-logo-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-logo-img {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+.navbar-title-text {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--brand-wordmark-blue, #0d3b66);
+}
+
+/* Core Navigation Links Track */
+.navbar-links-track {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+  
+  .navbar-brand-section {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .navbar-links-track {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .navbar-right-wing {
+    align-self: flex-end;
+  }
+}
+
+/* Language Selection Elements */
+.navbar-right-wing {
+  display: flex;
+  align-items: center;
+}
+
+.lang-select-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.lang-dropdown-menu {
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-color, #cbd5e1);
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 0.9rem;
+}

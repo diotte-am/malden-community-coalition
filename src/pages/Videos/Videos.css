@@ -1,0 +1,36 @@
+/* Scoped Video Library Layout Styles */
+.active-filter-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f0f4f8;
+  border: 1px solid #d0e1fd;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: #333333;
+}
+
+.clear-filter-btn {
+  background: none;
+  border: none;
+  color: #c62828;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.clear-filter-btn:hover {
+  background-color: #ffebee;
+}
+
+.catalog-empty-state {
+  text-align: center;
+  color: #666666;
+  padding: 5rem 1rem;
+  font-size: 1.1rem;
+}

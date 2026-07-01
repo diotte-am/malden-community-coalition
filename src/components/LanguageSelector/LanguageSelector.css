@@ -1,0 +1,39 @@
+/* Container flex styling */
+.language-selector-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Screen reader / modern visual label */
+.language-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-main, #334155);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Selector dropdown menu styling resets */
+.lang-select {
+  padding: 0.4rem 1.75rem 0.4rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-main, #334155);
+  background-color: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2ebf0);
+  border-radius: var(--radius-sm, 4px);
+  cursor: pointer;
+  appearance: none; /* Allows customization of the default arrow down the road if needed */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1em;
+}
+
+/* Focus indicator safety */
+.lang-select:focus {
+  outline: 2px solid var(--primary-color, #0284c7);
+  outline-offset: 1px;
+}
