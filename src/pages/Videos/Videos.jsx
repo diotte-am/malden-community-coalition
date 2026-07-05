@@ -66,30 +66,36 @@ export default function Videos() {
     <>
       {/* Full-Width Heritage Gradient Banner */}
       <PageHero 
-        title={t('videos.page_title', 'Community Video Library')} 
-        subtitle={t('videos.page_subtitle', 'Explore workshops, recorded coalition meetings, and advocacy resources.')} 
+        title={t('videos:page_title')} 
+        subtitle={t('videos:page_subtitle')} 
       />
 
       <main className="page-container">
         
-        {/* REUSABLE SYSTEM CONTROLS DASHBOARD */}
+       {/* REUSABLE CONTROLS DASHBOARD - Dropping in our custom labels */}
         <FilterDashboard 
           searchQuery={searchQuery}
           setSearchQuery={setSearchQuery}
           selectedCategory={selectedCategory}
           setSelectedCategory={setSelectedCategory}
           categories={uniqueCategories}
-          searchPlaceholder={t('videos.search_placeholder', 'Search videos...')}
+          searchPlaceholder={t('videos:search_placeholder')}
+          allCategoryLabel={t('videos:labels.all_categories')}
+          selectorType="dropdown" // explicitly use the dropdown selector layout
           showSort={true}
           isDescendingOrder={isDescendingOrder}
           setIsDescendingOrder={setIsDescendingOrder}
+          sortNewestLabel={t('videos:labels.sort_newest')}
+          sortOldestLabel={t('videos:labels.sort_oldest')}
         />
 
-        {/* Active Tag Highlight Status Strip */}
+       {/* Active Tag Highlight Status Strip */}
         {activeTagSearch && (
           <div className="active-filter-status" role="status">
-            <span>Showing tags: <strong>#{activeTagSearch}</strong></span>
-            <button className="clear-filter-btn" onClick={() => setActiveTagSearch(null)}>✕ Clear Filter</button>
+            <span>{t('videos:labels.showing_tags')} <strong>#{activeTagSearch}</strong></span>
+            <button className="clear-filter-btn" onClick={() => setActiveTagSearch(null)}>
+              {t('videos:labels.clear_filter')}
+            </button>
           </div>
         )}
 
@@ -113,7 +119,7 @@ export default function Videos() {
             ))
           ) : (
             <div className="catalog-empty-state">
-              {t('videos.no_results', 'No videos match your search criteria.')}
+              {t('videos:no_results')}
             </div>
           )}
         </div>

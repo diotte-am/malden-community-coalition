@@ -95,7 +95,7 @@ export default function Home() {
             {/* Componentized Live Video Spotlight Feature */}
             {latestVideo && (
               <HomeFeaturedSection
-                title={`📺 ${t('home.featured_video', 'Latest Broadcast Updates')}`}
+                title={`${t('home.featured_video', 'Latest Broadcast Updates')}`}
                 linkTo="/videos"
                 linkText="See more updates →"
               >
@@ -106,7 +106,7 @@ export default function Home() {
             {/* Componentized Resource Spotlight Feature */}
             {resourceOfTheDay && (
               <HomeFeaturedSection
-                title={`💡 ${t('home.featured_resource', 'Resource Spotlight')}`}
+                title={`${t('home.featured_resource', 'Resource Spotlight')}`}
                 linkTo="/resources"
                 linkText="See more resources →"
               >
@@ -117,7 +117,7 @@ export default function Home() {
             {/* Componentized News and Bulletins Feed Block */}
             {previewNews.length > 0 && (
               <HomeFeaturedSection
-                title={`📢 ${t('home.news_heading', 'Latest News & Events')}`}
+                title={`${t('home.news_heading', 'Latest News & Events')}`}
                 linkTo="/news"
                 linkText="See more news announcements →"
               >

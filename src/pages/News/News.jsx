@@ -17,8 +17,8 @@ export default function News() {
   return (
     <>
       <PageHero 
-        title={t('news.page_title', 'News')} 
-        subtitle={t('news.page_subtitle', "What's new in our community and upcoming events")} 
+        title={t('news:page_title')} 
+        subtitle={t('news:page_subtitle')} 
       />
 
       {/* Main Content Grid Area */}
@@ -31,7 +31,7 @@ export default function News() {
             ))
           ) : (
             <div className="news-empty-state">
-              {t('news.no_records', 'No current news or upcoming events announcements found.')}
+              {t('news.search_placeholder')}
             </div>
           )}
 

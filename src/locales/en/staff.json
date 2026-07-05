@@ -1,0 +1,14 @@
+{
+  "page_title": "Our Team",
+  "page_subtitle": "Meet the dedicated staff members working behind the scenes to advocate for the Malden community.",
+  "members": {
+    "staff-01": {
+      "role": "Executive Director",
+      "bio": "Alex has over a decade of experience in community organizing and public policy. Born and raised in Malden, they are dedicated to building sustainable partnerships that amplify local grassroots voices."
+    },
+    "staff-02": {
+      "role": "Program & Volunteer Coordinator",
+      "bio": "Sarah manages our community workshops, direct outreach initiatives, and volunteer cohorts. She coordinates logistics across our diverse local projects to ensure every voice is supported."
+    }
+  }
+}

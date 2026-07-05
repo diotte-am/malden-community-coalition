@@ -30,30 +30,30 @@ export default function Navbar() {
               alt="Malden Community Coalition Logo" 
               className="navbar-logo-img" 
             />
-            <span className="navbar-title-text">MCoCo</span>
+            <span className="navbar-title-text"></span>
           </NavLink>
 
           {/* Core navigation tracks shifted over to the left wing */}
           <div className="navbar-links-track">
             <NavLink to="/resources" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-              {t('nav.resources', 'Resources')}
+              {t('common:nav.resources', 'Resources')}
             </NavLink>
 
             <NavLink to="/videos" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-              {t('nav.videos', 'Videos')}
+              {t('common:nav.videos', 'Videos')}
             </NavLink>
 
             {/* Dedicated News feed navigation node */}
             <NavLink to="/news" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-              {t('nav.news', 'News')}
+              {t('common:nav.news', 'News')}
             </NavLink>
 
             <NavLink to="/staff" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-              {t('nav.staff', 'Staff')}
+              {t('common:nav.staff', 'Staff')}
             </NavLink>
 
             <NavLink to="/contact" className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}>
-              {t('nav.contact', 'Contact')}
+              {t('common:nav.contact', 'Contact')}
             </NavLink>
           </div>
         </div>
@@ -63,12 +63,12 @@ export default function Navbar() {
           {/* Accessible Dropdown Language Menu Selector */}
           <div className="lang-select-wrapper">
             <label htmlFor="navbar-lang-select" className="visually-hidden">
-              🌐
+              Select Language
             </label>
             <select 
               id="navbar-lang-select"
               className="lang-dropdown-menu" 
-              value={i18n.language} 
+              value={i18n.language?.split('-')[0] || 'en'} // Prevents 'en-US' from breaking 'en' value matching
               onChange={handleLanguageChange}
             >
               <option value="en">English</option>

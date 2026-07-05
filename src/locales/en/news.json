@@ -1,0 +1,16 @@
+{
+  "page_title": "Community Announcements",
+  "page_subtitle": "Stay informed about latest updates, local resource shifts, and neighborhood actions in Malden.",
+  "search_placeholder": "Search announcements...",
+  "filters": {
+    "all_types": "All Updates",
+    "events_only": "Events Only",
+    "news_only": "General News"
+  },
+  "no_results": "No announcements match your current search filters.",
+  "cards": {
+    "event_pill": "Event",
+    "share_btn": "Share",
+    "share_copied": "Link Copied!"
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import './ResourceCard.css'; // <-- Added direct scoped style binding
+import './ResourceCard.css'; 
 
 export default function ResourceCard({ resource, descKey }) {
   const { t } = useTranslation();
@@ -23,16 +23,24 @@ export default function ResourceCard({ resource, descKey }) {
           
           {/* Main Description text using localized key strings */}
           <p className="card-description-body">
-            {resource[descKey] || resource.desc_en || 'No description available.'}
+            {resource[descKey] || resource.desc_en || t('common:fallbacks.no_description')}
           </p>
           
           {/* Contact Details Footnote Layout */}
           <div className="card-footer-meta resource-contact-list">
-            {resource.poc && <div><strong>{t('resource.poc')}:</strong> {resource.poc}</div>}
-            {resource.phone && <div><strong>{t('resource.phone')}:</strong> {resource.phone}</div>}
+            {resource.poc && (
+              <div>
+                <strong>{t('common:contact_labels.poc')}:</strong> {resource.poc}
+              </div>
+            )}
+            {resource.phone && (
+              <div>
+                <strong>{t('common:contact_labels.phone')}:</strong> {resource.phone}
+              </div>
+            )}
             {resource.email && (
               <div>
-                <strong>{t('resource.email')}:</strong>{' '}
+                <strong>{t('common:contact_labels.email')}:</strong>{' '}
                 <a href={`mailto:${resource.email}`} className="nav-link resource-email-anchor">
                   {resource.email}
                 </a>
@@ -49,7 +57,7 @@ export default function ResourceCard({ resource, descKey }) {
                 rel="noopener noreferrer" 
                 className="btn-action-primary resource-visit-btn"
               >
-                {t('resource.visit_website')}
+                {t('common:buttons.visit_website')}
               </a>
             </div>
           )}

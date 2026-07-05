@@ -12,6 +12,7 @@ import resourceData from '../../data/resources.json';
 // 3. Import component folders using clean index barrel paths
 import ResourceCard from '../../components/ResourceCard';
 import PageHero from '../../components/PageHero';
+import FilterDashboard from '../../components/FilterDashboard'; // <-- Mounted generic controller
 
 export default function Resources() {
   const { t, i18n } = useTranslation();
@@ -67,34 +68,25 @@ export default function Resources() {
   return (
     <>
       <PageHero 
-        title={t('resources.title', 'Our Team')} 
-        subtitle={t('resources.subtitle')} 
+        title={t('resources:page_title')} 
+        subtitle={t('resources:page_subtitle')} 
       />
       
       {/* Bounded primary site container */}
       <main className="page-container">
         
-        {/* Control Panel: Form Inputs styled with clean local classes */}
-        <div className="horizontal-row-card resources-control-panel">
-          <input
-            type="text"
-            className="form-field-group input resources-search-input"
-            placeholder={t('resources.search_placeholder')}
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-          />
-
-          <select
-            className="control-dashboard-select resources-category-select"
-            value={selectedCategory}
-            onChange={(e) => setSelectedCategory(e.target.value)}
-          >
-            <option value="All">All Categories</option>
-            {uniqueCategories.filter(cat => cat !== 'All').map(cat => (
-              <option key={cat} value={cat}>{cat}</option>
-            ))}
-          </select>
-        </div>
+        {/* REUSABLE SYSTEM CONTROLS DASHBOARD */}
+        <FilterDashboard 
+          searchQuery={searchQuery}
+          setSearchQuery={setSearchQuery}
+          selectedCategory={selectedCategory}
+          setSelectedCategory={setSelectedCategory}
+          categories={uniqueCategories} // Passes strings array perfectly!
+          searchPlaceholder={t('resources:search_placeholder')}
+          allCategoryLabel={t('resources:all_categories_label')}
+          selectorType="dropdown" // Retains your existing layout appearance
+          showSort={false}
+        />
 
         {/* Clean Vertical Stack Container */}
         <div className="vertical-stack-container">
@@ -104,7 +96,7 @@ export default function Resources() {
             ))
           ) : (
             <div className="resources-empty-state">
-              {t('resources.no_results')}
+              {t('resources:no_results')}
             </div>
           )}
         </div>

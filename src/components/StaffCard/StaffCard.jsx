@@ -1,40 +1,37 @@
 import React from 'react';
-import './StaffCard.css'; // <-- Added direct scoped style binding
+import { useTranslation } from 'react-i18next';
+import './StaffCard.css';
 
 export default function StaffCard({ member }) {
+  const { t } = useTranslation();
+
   return (
-    <article className="horizontal-row-card">
+    <article className="horizontal-row-card staff-member-card">
       <div className="card-content-stack">
         
-        {/* Name & Title Header Row */}
         <header className="card-header-row">
           <h3 className="card-title-highlight">{member.name}</h3>
-          <span className="card-meta-badge">{member.role}</span>
+          {/* Dynamically query by the member's unique ID key path */}
+          <span className="card-meta-badge staff-role-badge">
+            {t(`staff:members.${member.id}.role`)}
+          </span>
         </header>
 
-        {/* Structural Break Line matching global card dividers */}
         <hr className="card-divider-line" />
 
-        {/* Body & Meta Details Block */}
         <div className="card-body-block">
-          <p className="card-description-body">{member.bio}</p>
+          <p className="card-description-body staff-bio-text">
+            {t(`staff:members.${member.id}.bio`)}
+          </p>
           
-          {/* Contact Layout Row */}
-          <div className="card-footer-meta staff-contact-row">
-            Contact:{' '}
-            <a href={`mailto:${member.email}`} className="nav-link staff-email-link">
-              {member.email}
-            </a>
-          </div>
-
-          {/* Reusing Global Filter Tag Layout for Core Skills/Focus areas */}
-          <div className="card-tag-cluster staff-card-tags">
-            {member.tags.map((tag, index) => (
-              <span key={index} className="tag-pill-btn staff-skill-pill">
-                {tag}
-              </span>
-            ))}
-          </div>
+          {member.email && (
+            <div className="card-footer-meta staff-contact-info">
+              <strong>{t('common:contact_labels.email')}:</strong>{' '}
+              <a href={`mailto:${member.email}`} className="nav-link resource-email-anchor">
+                {member.email}
+              </a>
+            </div>
+          )}
         </div>
 
       </div>
