@@ -1,0 +1,13 @@
+{
+  "page_title": "Galeria de vídeos",
+  "page_subtitle": "Explore nosso arquivo de discussões comunitárias, workshops educacionais e fóruns públicos.",
+  "search_placeholder": "Pesquise vídeos por título ou descrição...",
+  "no_results": "Nenhum vídeo encontrado que corresponda aos seus critérios de filtro atuais.",
+  "labels": {
+    "all_categories": "Todas as categorias",
+    "sort_newest": "Mais novo primeiro",
+    "sort_oldest": "Mais antigo primeiro",
+    "showing_tags": "Mostrando vídeos marcados com",
+    "clear_filter": "Limpar filtro de tags"
+  }
+}

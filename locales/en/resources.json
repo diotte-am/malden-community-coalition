@@ -1,0 +1,13 @@
+{
+  "page_title": "Community Resource Directory",
+  "page_subtitle": "Find verified food access points, housing assistance, legal aid, and health networks in the Malden area.",
+  "search_placeholder": "Search resources by name, keyword, or support type...",
+  "all_categories_label": "All Resource Groups",
+  "no_results": "No resources match your search criteria. Please update your filters or try a different keyword.",
+  "categories": {
+    "food": "Food Access & Pantries",
+    "housing": "Housing & Utility Stability",
+    "legal": "Legal Aid & Advocacy",
+    "health": "Healthcare & Crisis Support"
+  }
+}

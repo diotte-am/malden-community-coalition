@@ -1,0 +1,30 @@
+{
+  "nav": {
+    "resources": "Resources",
+    "videos": "Videos",
+    "news": "News",
+    "staff": "Staff",
+    "contact": "Contact",
+    "language_label": "Language:"
+  },
+  "buttons": {
+    "search": "Search",
+    "submit": "Submit Message",
+    "open_form": "Open Contact Form",
+    "see_more": "See more",
+    "visit_website": "Visit Website"
+  },
+  "footer": {
+    "rights_reserved": "All rights reserved.",
+    "coalition_name": "Malden Community Coalition"
+  },
+  "contact_labels": {
+    "poc": "Point of Contact",
+    "phone": "Phone",
+    "email": "Email"
+  },
+  "fallbacks": {
+    "no_description": "No description available."
+  }
+
+}

@@ -1,0 +1,13 @@
+{
+  "page_title": "社区资源目录",
+  "page_subtitle": "查找马尔登地区经过验证的食品获取点、住房援助、法律援助和医疗网络。",
+  "search_placeholder": "按名称、关键字或支持类型搜索资源...",
+  "all_categories_label": "所有资源组",
+  "no_results": "没有资源符合您的搜索条件。请更新您的过滤器或尝试不同的关键字。",
+  "categories": {
+    "food": "食物获取和食品储藏室",
+    "housing": "住房和公用事业稳定性",
+    "legal": "法律援助与宣传",
+    "health": "医疗保健和危机支持"
+  }
+}

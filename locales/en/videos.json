@@ -1,0 +1,13 @@
+{
+  "page_title": "Video Gallery",
+  "page_subtitle": "Explore our archive of community discussions, educational workshops, and public forums.",
+  "search_placeholder": "Search videos by title or description...",
+  "no_results": "No videos found matching your current filter criteria.",
+  "labels": {
+    "all_categories": "All Categories",
+    "sort_newest": "Newest First",
+    "sort_oldest": "Oldest First",
+    "showing_tags": "Showing videos tagged with",
+    "clear_filter": "Clear Tag Filter"
+  }
+}
