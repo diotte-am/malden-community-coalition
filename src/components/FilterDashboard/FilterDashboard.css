@@ -1,46 +1,75 @@
-/* Container layout track */
+/* ==========================================================================
+   1. Main Wrapper Container (Forces everything onto one strict line)
+   ========================================================================== */
 .filter-dashboard-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: flex !important; /* Forces flexbox behavior over global card overrides */
+  flex-direction: row !important;
+  align-items: center;      /* Vertically aligns input, select, and button centers */
+  gap: 1rem;                /* Smooth spacing between elements */
+  width: 100%;
+  box-sizing: border-box;
   margin-bottom: 2rem;
-  align-items: center;
 }
 
-/* Flexible Search Field box */
+/* ==========================================================================
+   2. Flexible Search Container (Fills the remaining space on the left)
+   ========================================================================== */
+.search-field-container {
+  flex: 1;          /* Automatically stretches across the remaining room */
+  display: flex;
+  position: relative; /* Keeps your inline '✕' clear button absolute inside it */
+}
+
 .filter-search-input {
-  flex: 1;
-  padding: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 2.5rem 0.75rem 1rem; /* Extra right padding so text doesn't hit the '✕' */
   border-radius: 4px;
   border: 1px solid var(--border-color, #e2ebf0);
-  min-width: 250px;
   font-size: 1rem;
   box-sizing: border-box;
 }
 
-/* Dropdown Menu Track */
-.filter-category-select {
-  padding: 0.75rem;
-  border-radius: 4px;
-  border: 1px solid var(--border-color, #e2ebf0);
-  min-width: 180px;
-  background-color: var(--card-bg, #ffffff);
+/* Inline Clear Search (✕) positioning alignment */
+.clear-search-inline-btn {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
   cursor: pointer;
-  font-size: 1rem;
+  color: #94a3b8;
+  font-size: 0.85rem;
 }
 
-/* Sorting Toggle Action Control */
+/* ==========================================================================
+   3. Right-Justified Controls (Maintains sizes, never drops)
+   ========================================================================== */
+.filter-category-select,
 .filter-sort-btn {
   padding: 0.75rem 1.25rem;
   border-radius: 4px;
   border: 1px solid var(--border-color, #e2ebf0);
   background-color: var(--card-bg, #ffffff);
-  cursor: pointer;
-  font-weight: 600;
   font-size: 1rem;
+  box-sizing: border-box;
+  cursor: pointer;
+  flex-shrink: 0; /* Strict protection: keeps controls from squeezing or dropping down */
+}
+
+.filter-sort-btn {
+  font-weight: 600;
+  white-space: nowrap; /* Prevents text splitting if the arrows are tight */
   transition: background-color 0.2s ease;
 }
 
 .filter-sort-btn:hover {
   background-color: var(--bg-hover-tint, #f8fafc);
+}
+
+/* Handle layout fallback gracefully if pills mode is triggered instead */
+.filter-pills-horizontal-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
 }

@@ -1,14 +1,61 @@
 [
   {
-    "id": 1,
-    "date": "June 14, 2026",
-    "title": "Upcoming Community Clean-up Day",
-    "body": "Join our volunteer team this weekend for our seasonal neighborhood green initiative. Tools and light refreshments will be provided!"
-  },
-  {
-    "id": 2,
-    "date": "June 10, 2026",
-    "title": "New Translation Database Launched",
-    "body": "Our public resource index now fully supports English, Spanish, Portuguese, and Simplified Chinese to better serve all Malden families."
+    "id": "news-2025-01-25-summit",
+    "title": "The Malden Community Coalition Inaugural Summit",
+    "date": "January 25, 2025",
+    "category": "Events",
+    "heroImage": {
+      "src": "https://maldencommunitycoalition.neocities.org/Images/News/2025-02-13_Summit_4.jpg",
+      "alt": "Dozens of summit attendees mingle amongst themselves in a sunlit room."
+    },
+    "bodyBlocks": [
+      {
+        "type": "text",
+        "content": "On January 25th, at the First Parish Church in Malden, the Malden Community Coalition held their inaugural Malden Non-Profit Summit. At the summit, local organizations explained what they do to help the Malden community, followed by time for the assembled representatives to come together and discuss how they can best collaborate to support our beautifully diverse community."
+      },
+      {
+        "type": "quote",
+        "content": "May we work together, secure in the knowledge that an injury to one of us is an injury to all of us."
+      },
+      {
+        "type": "media-text",
+        "imageSide": "left",
+        "imageSrc": "https://maldencommunitycoalition.neocities.org/Images/News/2025-02-13_Summit_1.jpg",
+        "imageAlt": "Moderator Shane Landrum serving as the MC, wearing a stylish black mask.",
+        "content": "The summit began with a warm welcome from moderator Shane Landrum. They reminded the attendees about Malden’s deep history as a welcoming community. “Immigrants built fraternal groups, like the Sons of Italy and the Ancient Order of Hibernians, to stay connected with the ways of their ancestors even though they were in a strange new place. Malden still has chapters of both of these.” They also spoke about the importance of coming together to support each other in these difficult times. “May we work together, secure in the knowledge that an injury to one of us is an injury to all of us.”"
+      },
+      {
+        "type": "organization-list",
+        "introText": "The summit continued with presentations from 40+ local organizations including:",
+        "organizations": [
+          { "name": "ABCD", "url": "https://bostonabcd.org/" },
+          { "name": "Better Life for All", "url": "http://betterlifefourall.org/" },
+          { "name": "Bike to the Sea", "url": "https://biketothesea.org/" },
+          { "name": "Bread of Life", "url": "http://www.breadoflifemalden.org/" },
+          { "name": "Candorful", "url": "https://candorful.org/" },
+          { "name": "Chinese Culture Connection", "url": "https://www.chinesecultureconnection.org/" },
+          { "name": "Friends of Fellsmere Heights", "url": "https://www.fellsmereheights.org/about" },
+          { "name": "Friends of the Malden Public Library", "url": "https://www.friendsofmaldenlibrary.org/" },
+          { "name": "Friends of the Malden River", "url": "https://maldenriver.wordpress.com/" },
+          { "name": "Malden Overcoming Addiction", "url": "https://www.maldenovercomingaddiction.com/" },
+          { "name": "Malden Warming Center", "url": "https://www.maldenwarmingcenter.org/" },
+          { "name": "Urban Media Arts", "url": "https://urbanmediaarts.org/" }
+        ]
+      },
+      {
+        "type": "media-text",
+        "imageSide": "right",
+        "imageSrc": "https://maldencommunitycoalition.neocities.org/Images/News/2025-02-13_Summit_3.jpg",
+        "imageAlt": "Attendees browsing each others' materials and mingling wit one another.",
+        "content": "Everyone conveyed passion for their institutions, which led to many wonderful conversations and productive planning for future collaborations to make Malden a more cohesive and supportive city. Kay Allen, Chair of the Maplewood Association, said of the summit, “Our newly formed non-profit group found it interesting to see all the groups represented at the seminar and hear them explain what they are doing for the Malden community...” Ethan Bagley from ABCD stated, “Being surrounded by a room full of advocates - whether for the planet, the people, books, culture, or whatever - was inspiring...”"
+      },
+      {
+        "type": "media-text",
+        "imageSide": "left",
+        "imageSrc": "https://maldencommunitycoalition.neocities.org/Images/News/2025-02-13_Summit_2.jpg",
+        "imageAlt": "Summit attendees seated at circular tables, listening to speakers present.",
+        "content": "The steering committee of the Malden Community Coalition would like to say a huge thank you to First Parish Church for letting us use your wonderful space, and everyone who came out to make our first summit a great success. It’s wonderful to see that we all share the same drive to build a safer and more inclusive Malden. Moving forward, the Malden Community Coalition will have monthly meetings, to be announced through our website and our social media. We are also working on a non-profit directory that will be hosted on our website so people can find out who to contact for any need they may have. Lastly, we are organizing a Non-profit Volunteer Fair in the Spring where ordinary Maldonians can meet folks from our many community organizations to find out more about what they do and how to get involved."
+      }
+    ]
   }
 ]

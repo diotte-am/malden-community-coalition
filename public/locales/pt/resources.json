@@ -1,0 +1,13 @@
+{
+  "page_title": "Diretório de recursos comunitários",
+  "page_subtitle": "Encontre pontos verificados de acesso a alimentos, assistência habitacional, assistência jurídica e redes de saúde na área de Malden.",
+  "search_placeholder": "Pesquise recursos por nome, palavra-chave ou tipo de suporte...",
+  "all_categories_label": "Todos os grupos de recursos",
+  "no_results": "Nenhum recurso corresponde aos seus critérios de pesquisa. Atualize seus filtros ou tente uma palavra-chave diferente.",
+  "categories": {
+    "food": "Acesso a alimentos e despensas",
+    "housing": "Estabilidade de habitação e serviços públicos",
+    "legal": "Assistência Jurídica e Advocacia",
+    "health": "Assistência médica e apoio a crises"
+  }
+}

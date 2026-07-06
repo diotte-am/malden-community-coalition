@@ -1,0 +1,14 @@
+{
+  "page_title": "Nossa equipe",
+  "page_subtitle": "Conheça os funcionários dedicados que trabalham nos bastidores para defender a comunidade de Malden.",
+  "members": {
+    "staff-01": {
+      "role": "Diretor-executivo",
+      "bio": "Alex tem mais de uma década de experiência em organização comunitária e políticas públicas. Nascidos e criados em Malden, dedicam-se à construção de parcerias sustentáveis ​​que amplifiquem as vozes populares locais."
+    },
+    "staff-02": {
+      "role": "Coordenador de Programas e Voluntários",
+      "bio": "Sarah gerencia nossos workshops comunitários, iniciativas de divulgação direta e grupos de voluntários. Ela coordena a logística em nossos diversos projetos locais para garantir que todas as vozes sejam apoiadas."
+    }
+  }
+}

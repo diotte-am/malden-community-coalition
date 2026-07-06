@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import ContactFormPage from './pages/ContactFormPage';
 import Staff from './pages/Staff';
 import News from './pages/News';
+import NewsArticleView from './pages/NewsArticleView';
 
 export default function App() {
   return (
@@ -26,6 +27,8 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/contact/message" element={<ContactFormPage />} />
             <Route path="/staff" element={<Staff />} />
+            {/* Dynamic Parameterized Route for Individual Full Articles */}
+            <Route path="/news/:id" element={<NewsArticleView />} />
           </Routes>
         </main>
 

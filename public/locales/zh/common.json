@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "resources": "资源",
+    "videos": "视频",
+    "news": "消息",
+    "staff": "职员",
+    "contact": "接触",
+    "language_label": "语言："
+  },
+  "buttons": {
+    "search": "搜索",
+    "submit": "提交留言",
+    "open_form": "打开联系表",
+    "see_more": "查看更多",
+    "visit_website": "访问网站"
+  },
+  "footer": {
+    "rights_reserved": "版权所有。",
+    "coalition_name": "马尔登社区联盟"
+  },
+  "contact_labels": {
+    "poc": "联络点",
+    "phone": "电话",
+    "email": "电子邮件"
+  },
+  "fallbacks": {
+    "no_description": "没有可用的描述。"
+  }
+}

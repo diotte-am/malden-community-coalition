@@ -13,7 +13,7 @@ import PageHero from '../../components/PageHero';
 const videoData = rawVideoData.filter(item => item && item.id && item.youtubeId);
 
 export default function Videos() {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('videos', 'common');
   
   // Local state controls
   const [searchQuery, setSearchQuery] = useState('');

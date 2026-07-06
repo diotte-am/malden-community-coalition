@@ -1,0 +1,86 @@
+.full-news-article {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.article-title-header h1 {
+  font-size: 2.25rem;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.article-meta-date {
+  color: #64748b;
+  font-style: italic;
+  font-size: 1.1rem;
+}
+
+.img-fluid-hero {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+/* Mixed Side Media-Text Wrapping Columns */
+.article-media-row {
+  display: flex;
+  flex-direction: column; /* Mobile-first: images stack on top of text blocks */
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.article-inline-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+.article-blockquote {
+  border-left: 4px solid #0284c7;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #334155;
+}
+
+.org-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 0.75rem;
+  padding: 1rem 0;
+  list-style: none;
+}
+
+.org-inline-link {
+  color: #0284c7;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.org-inline-link:hover {
+  text-decoration: underline;
+}
+
+/* Upgraded Inline Floating for Large Screens */
+@media (min-width: 768px) {
+  .article-media-row {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  
+  .article-media-row.float-left {
+    flex-direction: row;
+  }
+  
+  .article-media-row.float-right {
+    flex-direction: row-reverse; /* Flips image to the right side on desktop */
+  }
+
+  .article-inline-img {
+    width: 30%; /* Replaces the old static max-width percentage style limits */
+    max-width: 240px;
+  }
+}

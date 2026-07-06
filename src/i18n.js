@@ -17,9 +17,10 @@ i18n
   .init({
     // Fallback to English if a requested language string or resource namespace is missing
     fallbackLng: 'en',
+    load: "languageOnly",
     
     // Explicitly declare the separate JSON asset namespaces we've built so far
-    ns: ['common', 'news', 'videos', 'resources'],
+    ns: ['common', 'news', 'videos', 'resources', 'staff'],
     
     // The fallback namespace used if no explicit filename prefix is provided in t()
     defaultNS: 'common',

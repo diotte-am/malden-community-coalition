@@ -9,13 +9,18 @@ import StaffCard from '../../components/StaffCard';
 import PageHero from '../../components/PageHero';
 
 export default function Staff() {
-  const { t } = useTranslation();
+  const { t, ready } = useTranslation('staff', 'common');
+
+  // Guard clause to prevent rendering raw string keys while the file loads over HTTP
+  if (!ready) {
+    return <div className="page-container">Loading...</div>;
+  }
   
   return (
     <>
       <PageHero 
-        title={t('staff.page_title', 'Our Team')} 
-        subtitle={t('staff.page_subtitle', 'Meet the dedicated staff members working behind the scenes to advocate for the Malden community.')} 
+        title={t('staff:page_title')} 
+        subtitle={t('staff:page_subtitle')} 
       />
 
       {/* Main Layout Body Container */}

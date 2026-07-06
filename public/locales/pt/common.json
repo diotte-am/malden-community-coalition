@@ -1,0 +1,29 @@
+{
+  "nav": {
+    "resources": "Recursos",
+    "videos": "Vídeos",
+    "news": "Notícias",
+    "staff": "Funcionários",
+    "contact": "Contato",
+    "language_label": "Linguagem:"
+  },
+  "buttons": {
+    "search": "Procurar",
+    "submit": "Enviar mensagem",
+    "open_form": "Abrir formulário de contato",
+    "see_more": "Ver mais",
+    "visit_website": "Visite o site"
+  },
+  "footer": {
+    "rights_reserved": "Todos os direitos reservados.",
+    "coalition_name": "Coalizão Comunitária de Malden"
+  },
+  "contact_labels": {
+    "poc": "Ponto de contato",
+    "phone": "Telefone",
+    "email": "E-mail"
+  },
+  "fallbacks": {
+    "no_description": "Nenhuma descrição disponível."
+  }
+}

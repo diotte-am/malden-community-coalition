@@ -1,0 +1,16 @@
+{
+  "page_title": "Anúncios da comunidade",
+  "page_subtitle": "Mantenha-se informado sobre as últimas atualizações, mudanças de recursos locais e ações de bairro em Malden.",
+  "search_placeholder": "Pesquisar comunicados...",
+  "filters": {
+    "all_types": "Todas as atualizações",
+    "events_only": "Apenas eventos",
+    "news_only": "Notícias Gerais"
+  },
+  "no_results": "Nenhum anúncio corresponde aos seus filtros de pesquisa atuais.",
+  "cards": {
+    "event_pill": "Evento",
+    "share_btn": "Compartilhar",
+    "share_copied": "Link copiado!"
+  }
+}

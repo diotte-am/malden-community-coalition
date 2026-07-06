@@ -1,33 +1,27 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './HomeFeaturedSection.css'
 
-/**
- * Reusable Featured Content Section Wrapper Component
- * Eliminates repetitive layout trees, flush borders, and link actions
- */
 export default function HomeFeaturedSection({ title, linkTo, linkText, children }) {
+  const sectionId = `section-heading-${title.toLowerCase().replace(/\s+/g, '-')}`;
+
   return (
-    <section aria-labelledby={`section-heading-${title.toLowerCase().replace(/\s+/g, '-')}`}>
-      {/* 
-        Dynamic ID pairing with aria-labelledby delivers immediate context 
-        to assistive devices without mutating structural class layouts.
-      */}
-      <h2 
-        id={`section-heading-${title.toLowerCase().replace(/\s+/g, '-')}`} 
-        className="home-section-title"
-      >
-        {title}
-      </h2>
+    <section aria-labelledby={sectionId} className="home-featured-card-wrapper">
+      <header className="featured-card-header">
+        <h2 id={sectionId} className="home-section-title">
+          {title}
+        </h2>
+      </header>
       
-      <div className="unified-card-group">
+      <div className="featured-card-body">
         {children}
-        
-        <div className="card-flush-footer">
-          <NavLink to={linkTo} className="card-flush-footer-link">
-            {linkText}
-          </NavLink>
-        </div>
       </div>
+        
+      <footer className="card-flush-footer">
+        <NavLink to={linkTo} className="card-flush-footer-link">
+          {linkText}
+        </NavLink>
+      </footer>
     </section>
   );
 }

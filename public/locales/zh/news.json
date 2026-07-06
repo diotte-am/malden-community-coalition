@@ -1,0 +1,16 @@
+{
+  "page_title": "社区公告",
+  "page_subtitle": "随时了解莫尔登的最新动态、当地资源转移和社区活动。",
+  "search_placeholder": "搜索公告...",
+  "filters": {
+    "all_types": "所有更新",
+    "events_only": "仅限活动",
+    "news_only": "一般新闻"
+  },
+  "no_results": "没有符合您当前搜索过滤条件的公告。",
+  "cards": {
+    "event_pill": "事件",
+    "share_btn": "分享",
+    "share_copied": "链接已复制！"
+  }
+}

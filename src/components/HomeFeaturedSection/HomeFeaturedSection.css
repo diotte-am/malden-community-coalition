@@ -1,0 +1,54 @@
+/* 1. Target the unified section wrapper */
+.home-featured-card-wrapper {
+  background-color: #ffffff; /* Give the entire wrapper one shared canvas background */
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2.5rem;
+  overflow: hidden; /* Clips children elements flush to your border radius */
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2. Style the header internally */
+.featured-card-header {
+  padding: 1.5rem 1.5rem 0.5rem 1.5rem;
+  background-color: #ffffff;
+}
+
+.featured-card-header .home-section-title {
+  margin: 0;
+  font-size: 1.35rem;
+  color: #1e293b;
+}
+
+/* 3. Style the body compartment holding your children */
+.featured-card-body {
+  padding: 0 1.5rem 1rem 1.5rem;
+}
+
+/* 4. STRIP down inner card borders so they don't fight the wrapper border */
+.home-featured-card-wrapper .video-card-container, 
+.home-featured-card-wrapper .resource-card-container,
+.home-featured-card-wrapper .news-preview-card {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 5. Clean flush bottom anchor */
+.card-flush-footer {
+  padding: 1rem 1.5rem;
+  background-color: #f8fafc; /* Shaded floor block */
+  border-top: 1px solid #e2e8f0;
+  margin-top: auto;
+}
+
+.card-flush-footer-link {
+  display: inline-block;
+  color: #0284c7;
+  text-decoration: none;
+  font-weight: 500;
+}

@@ -1,0 +1,13 @@
+{
+  "page_title": "视频库",
+  "page_subtitle": "探索我们的社区讨论、教育研讨会和公共论坛档案。",
+  "search_placeholder": "按标题或描述搜索视频...",
+  "no_results": "未找到符合您当前过滤条件的视频。",
+  "labels": {
+    "all_categories": "所有类别",
+    "sort_newest": "最新第一",
+    "sort_oldest": "最旧的在前",
+    "showing_tags": "显示带有标签的视频",
+    "clear_filter": "清除标签过滤器"
+  }
+}
