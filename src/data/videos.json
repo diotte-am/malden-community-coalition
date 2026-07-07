@@ -1,8 +1,36 @@
 [
   {
     "id": "vid_001",
+    "youtubeId": "v83Ld4XYIX8",
+    "category": "Nonprofits & Activism",
+    "series": "Malden Community Conversation",
+    "title": "Malden Community Conversation with Malden Grows and the Malden Community Garden",
+    "desc_en": "Learn all about the gardening opportunities Malden has to offer in this Community Conversation with Jen Truong from Malden Grows and Julie Mangan from the Malden Community Garden.",
+    "desc_es": "",
+    "desc_pt": "",
+    "desc_zh": "",
+    "upload_date_raw": "20260627",
+    "upload_date_display": "2026-06-27",
+    "duration_seconds": 1853,
+    "duration_display": "30:53",
+    "view_count": 16,
+    "like_count": null,
+    "tags": [
+      "malden",
+      "maldenma",
+      "maldengrows",
+      "communitygarden",
+      "gardening",
+      "invasiveplants"
+    ],
+    "video_url": "https://www.youtube.com/watch?v=v83Ld4XYIX8",
+    "thumbnail_maxres": "https://i.ytimg.com/vi/v83Ld4XYIX8/maxresdefault.jpg"
+  },
+  {
+    "id": "vid_002",
     "youtubeId": "qC0_5c17a80",
     "category": "Nonprofits & Activism",
+    "series": "Malden Community Conversation",
     "title": "Malden Community Conversation with Malden Juneteenth",
     "desc_en": "Learn all about Malden's Juneteenth celebration and the history of this significant day with this month's Community Conversation with Erga from Malden Juneteenth.",
     "desc_es": "",
@@ -26,9 +54,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/qC0_5c17a80/sddefault.jpg?sqp=-oaymwEmCIAFEOAD8quKqQMa8AEB-AH-BIAC6AKKAgwIABABGE8gVChlMA8=&rs=AOn4CLBoozCOdavnSugTJkwfenSlJdbP0A"
   },
   {
-    "id": "vid_002",
+    "id": "vid_003",
     "youtubeId": "ULyQSAz7AEw",
     "category": "Nonprofits & Activism",
+    "series": "Malden Community Conversation",
     "title": "Malden Community Conversation w/ Friends of the Malden River and Mystic Valley Watershed Association",
     "desc_en": "Find out how you can help the Malden River and the surrounding Mystic Valley Watershed in this Community Conversation!",
     "desc_es": "",
@@ -54,9 +83,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/ULyQSAz7AEw/maxresdefault.jpg"
   },
   {
-    "id": "vid_003",
+    "id": "vid_004",
     "youtubeId": "rMAqHZrVg_E",
     "category": "Nonprofits & Activism",
+    "series": "Malden Community Conversation",
     "title": "Malden Community Conversation - All About the Prop 2 1/2 Override with Councillor Carey McDonald",
     "desc_en": "Get ready to vote on the Prop 2 1/2 Override election on March 31st by getting on the facts from Councillor At Large Carey McDonald in this month Malden Community Conversation.  A big thanks to Councillor McDonald for spending the time to inform the people of Malden on this important decision for our city.",
     "desc_es": "",
@@ -80,9 +110,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/rMAqHZrVg_E/sddefault.jpg?sqp=-oaymwEmCIAFEOAD8quKqQMa8AEB-AH-BIAC6AKKAgwIABABGE8gSShlMA8=&rs=AOn4CLAB1DMYEPqw8rLHEXEpVx8LAEH7Lw"
   },
   {
-    "id": "vid_004",
+    "id": "vid_005",
     "youtubeId": "iB3IpuVQ1D0",
     "category": "Nonprofits & Activism",
+    "series": "Malden Community Conversation",
     "title": "Malden Community Conversation with Indivisible",
     "desc_en": "Hear how you can help fight for change with the folks from Indivisible Melrose Wakefield and Beyond in this Malden Community Conversation!  To learn more about our local Indivisible chapter, go to indivisibleinn.org.  If you want to keep up to date with all the activities of the Malden Community Coalition, check out our website at maldencommunitycoalition.neocities.org.",
     "desc_es": "",
@@ -108,9 +139,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/iB3IpuVQ1D0/sddefault.jpg?sqp=-oaymwEmCIAFEOAD8quKqQMa8AEB-AH-BIAC6AKKAgwIABABGE8gSShyMA8=&rs=AOn4CLAWE1uHeDfMUZrUJHgpJh-ZEV_3lg"
   },
   {
-    "id": "vid_005",
+    "id": "vid_006",
     "youtubeId": "K7S8J9tf4cM",
     "category": "Nonprofits & Activism",
+    "series": "Malden Community Conversation",
     "title": "Malden Community Conversation with City Council President Amanda Linehan",
     "desc_en": "Hear what is in store for our city in 2026, including the prop 2 1/2 vote in March, from our City Council President, Amanda Linehan.",
     "desc_es": "",
@@ -133,9 +165,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/K7S8J9tf4cM/maxresdefault.jpg"
   },
   {
-    "id": "vid_006",
+    "id": "vid_007",
     "youtubeId": "f6ley-XBNrw",
     "category": "Nonprofits & Activism",
+    "series": "Malden Community Conversation",
     "title": "Malden Community Conversation with Malden Safe Streets",
     "desc_en": "Learn how your fellow citizens are keeping the streets safe for everyone in our interview with a panel of folks from Malden Safe Streets!",
     "desc_es": "",
@@ -160,9 +193,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/f6ley-XBNrw/maxresdefault.jpg"
   },
   {
-    "id": "vid_007",
+    "id": "vid_008",
     "youtubeId": "pEnGtMc4tXE",
     "category": "Nonprofits & Activism",
+    "series": "Malden Community Conversation",
     "title": "Malden Community Conversation with the Able Youth Alliance",
     "desc_en": "Find out how you can help and get involved with this youth lead non-profit that helps kids with disabilities from the founder of the Able Youth Alliance!",
     "desc_es": "",
@@ -186,9 +220,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/pEnGtMc4tXE/maxresdefault.jpg"
   },
   {
-    "id": "vid_008",
+    "id": "vid_009",
     "youtubeId": "s6WzQiV1YK8",
     "category": "Nonprofits & Activism",
+    "series": "Malden Community Conversation",
     "title": "Community Conversation with Ethan Bagley",
     "desc_en": "Learn all about how you can help our unhoused population with the director of the Rehumanization Project, Ethan Bagely.",
     "desc_es": "",
@@ -210,9 +245,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/s6WzQiV1YK8/maxresdefault.jpg"
   },
   {
-    "id": "vid_009",
+    "id": "vid_010",
     "youtubeId": "1Sl1zFpORt4",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - Safe Routes to School",
     "desc_en": "Help Malden's students arrive to school safely with Safe Routes to School.  www.mass.gov/safe-routes-to-school",
     "desc_es": "",
@@ -237,9 +273,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/1Sl1zFpORt4/maxresdefault.jpg"
   },
   {
-    "id": "vid_010",
+    "id": "vid_011",
     "youtubeId": "yiYIPYKvRIU",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - Malden Warming Center",
     "desc_en": "Help the most venerable folks here in Malden by volunteering with the Malden Warming Center.  www.maldenwarmingcenter.org",
     "desc_es": "",
@@ -264,9 +301,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/yiYIPYKvRIU/maxresdefault.jpg"
   },
   {
-    "id": "vid_011",
+    "id": "vid_012",
     "youtubeId": "uTbK3-_TLdc",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - Malden Safe Streets",
     "desc_en": "Help keep Malden streets safe for walkers, bikers, and public transit with Malden Safe Streets.  maldensafestreets.org",
     "desc_es": "",
@@ -295,9 +333,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/uTbK3-_TLdc/maxresdefault.jpg"
   },
   {
-    "id": "vid_012",
+    "id": "vid_013",
     "youtubeId": "RhIj6qE7rSc",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - Alray Scholars Program",
     "desc_en": "Help adult learners with a college education with Alray Scholars Program.  alray.org",
     "desc_es": "",
@@ -323,9 +362,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/RhIj6qE7rSc/maxresdefault.jpg"
   },
   {
-    "id": "vid_013",
+    "id": "vid_014",
     "youtubeId": "2oKiKNzLBrI",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - Blueprints of Love",
     "desc_en": "Help cheer up sick kids and get decorating with Blueprints of Love!  www.blueprintsoflove.com",
     "desc_es": "",
@@ -352,9 +392,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/2oKiKNzLBrI/maxresdefault.jpg"
   },
   {
-    "id": "vid_014",
+    "id": "vid_015",
     "youtubeId": "IwQYZ9cQYGY",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - The Bridge Recovery Center",
     "desc_en": "Learn how you can help fight addiction in Malden with the Bridge Recovery Center.  www.bridgerecoverycenter.org",
     "desc_es": "",
@@ -380,9 +421,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/IwQYZ9cQYGY/maxresdefault.jpg"
   },
   {
-    "id": "vid_015",
+    "id": "vid_016",
     "youtubeId": "zizW78Cauag",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - Mass Senior Action Council",
     "desc_en": "Learn how you can help Malden's elders with Mass Senior Action Council.  www.masssenioraction.org",
     "desc_es": "",
@@ -407,9 +449,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/zizW78Cauag/maxresdefault.jpg"
   },
   {
-    "id": "vid_016",
+    "id": "vid_017",
     "youtubeId": "CgAaTRXURFQ",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - Mystic River Watershed Association",
     "desc_en": "Help the Mystic River Watershed keep our local watershed clean and available to all.  mysticriver.org",
     "desc_es": "",
@@ -435,9 +478,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/CgAaTRXURFQ/maxresdefault.jpg"
   },
   {
-    "id": "vid_017",
+    "id": "vid_018",
     "youtubeId": "eekq9LC_AUA",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - Friends of the Malden Public Library",
     "desc_en": "Learn how you can get involved with our wonderful public library with the Friends of the Malden Public Library.  www.friendsofmaldenlibrary.org",
     "desc_es": "",
@@ -461,9 +505,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/eekq9LC_AUA/maxresdefault.jpg"
   },
   {
-    "id": "vid_018",
+    "id": "vid_019",
     "youtubeId": "0i03rocqUbI",
     "category": "Nonprofits & Activism",
+    "series": "Live Event",
     "title": "Good Trouble Lives On Rally - Malden, MA -  7/17/25",
     "desc_en": "Watch the rally and speeches that make up the Good Trouble Lives On rally brought to you by Indivisible, Mobilize Melrose, and the Malden Community Coalition.",
     "desc_es": "",
@@ -486,9 +531,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/0i03rocqUbI/maxresdefault.jpg"
   },
   {
-    "id": "vid_019",
+    "id": "vid_020",
     "youtubeId": "vVFHK50cBcA",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - Chinese Culture Connection",
     "desc_en": "Learn about American Asian culture in Malden with the Chinese Culture Connection!  www.chinesecultureconnection.org",
     "desc_es": "",
@@ -512,9 +558,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/vVFHK50cBcA/maxresdefault.jpg"
   },
   {
-    "id": "vid_020",
+    "id": "vid_021",
     "youtubeId": "wUyPP0Ao9bM",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - Bread of Life",
     "desc_en": "Help feed those in the Malden community that need food assistance by volunteering with Bread of Life!  www.breadoflifemalden.org",
     "desc_es": "",
@@ -538,9 +585,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/wUyPP0Ao9bM/maxresdefault.jpg"
   },
   {
-    "id": "vid_021",
+    "id": "vid_022",
     "youtubeId": "pXdXHRiDb14",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - Malden Grows",
     "desc_en": "Get help growing your garden and keeping Malden green with Malden Grows.  www.facebook.com/groups/842298063243114",
     "desc_es": "",
@@ -565,9 +613,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/pXdXHRiDb14/maxresdefault.jpg"
   },
   {
-    "id": "vid_022",
+    "id": "vid_023",
     "youtubeId": "Yre0KVe6OiA",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - The Immigrant Learning Center",
     "desc_en": "Teach english to those who need it most in Malden with the Immigrant Learning Center.  www.ilctr.org",
     "desc_es": "",
@@ -592,9 +641,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/Yre0KVe6OiA/maxresdefault.jpg"
   },
   {
-    "id": "vid_023",
+    "id": "vid_024",
     "youtubeId": "AauQnwROU3A",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - OnStage Dance Company",
     "desc_en": "Find out how to start dancing here in Malden with OnStage Dance Company.  https://www.onstagedanceco.com/",
     "desc_es": "",
@@ -618,9 +668,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/AauQnwROU3A/maxresdefault.jpg"
   },
   {
-    "id": "vid_024",
+    "id": "vid_025",
     "youtubeId": "WEN6BBxQXk0",
     "category": "Nonprofits & Activism",
+    "series": "Malden Community Conversation",
     "title": "Malden Community Conversation with Malden Pride Coalition",
     "desc_en": "Learn all about Malden Pride and how you can get involved with their Pride Month events!  Go to maldenpride.org to learn more about this great community organization.",
     "desc_es": "",
@@ -645,9 +696,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/WEN6BBxQXk0/maxresdefault.jpg"
   },
   {
-    "id": "vid_025",
+    "id": "vid_026",
     "youtubeId": "KlrTjaySXzY",
     "category": "Nonprofits & Activism",
+    "series": "Live Event",
     "title": "MCoCo 2025 Volunteer Fair Sponsor Karen Colón Hayes",
     "desc_en": "Hear from Karen Colón Hayes, the wonderful city sponsor of this year's Malden Volunteer Fair!  Have a question for Karen?  You can email her at kcolonhayes@cityofmalden.org and check out her website at www.karencolonhayes.com !",
     "desc_es": "",
@@ -671,9 +723,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/KlrTjaySXzY/maxresdefault.jpg"
   },
   {
-    "id": "vid_026",
+    "id": "vid_027",
     "youtubeId": "buLnxvC06Bs",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight Pride Coalition",
     "desc_en": "Learn all about Malden Pride Coalition in this video!  Don't miss out on any of the Pride Month fun!  Go to maldenpride.org to see their calendar of events.  And don't forget to mark your calendars for June 22nd for the festival itself!",
     "desc_es": "",
@@ -700,9 +753,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/buLnxvC06Bs/maxresdefault.jpg"
   },
   {
-    "id": "vid_027",
+    "id": "vid_028",
     "youtubeId": "yv_DJqfcjjU",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight Malden Juneteenth",
     "desc_en": "Find out all about Malden Juneteenth in this video!  Mark your calendars for the 8th Annual Juneteenth Celebration at the Salemwood School on June 19th: www.facebook.com/events/1074684721138504  And check out their facebook page to learn more: www.facebook.com/MaldenJuneteenth/",
     "desc_es": "",
@@ -728,9 +782,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/yv_DJqfcjjU/maxresdefault.jpg"
   },
   {
-    "id": "vid_028",
+    "id": "vid_029",
     "youtubeId": "pSPo-2HvZaY",
     "category": "Nonprofits & Activism",
+    "series": "Live Event",
     "title": "Malden Community Coalition Volunteer Fair Interviews",
     "desc_en": "See all the interviews Malden Community Coalition did at the 2025 Malden Volunteer Fair and learn about some of the great organizations that participated who you can volunteer for!  Want to know more about the Malden Community Coalition that put on the fair?  Go to our website at maldencommunitycoalition.neocities.org and keep up to date with our events from our facebook page at www.facebook.com/groups/973837211343088",
     "desc_es": "",
@@ -756,9 +811,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/pSPo-2HvZaY/maxresdefault.jpg"
   },
   {
-    "id": "vid_029",
+    "id": "vid_030",
     "youtubeId": "TDVaLMAKoqE",
     "category": "Nonprofits & Activism",
+    "series": "MCoCo 2025 Org Spotlight",
     "title": "MCoCo 2025 Org Spotlight - Malden Porchfest",
     "desc_en": "Find out all about Malden Porchfest!  Don't miss Malden Porchfest 2025 on May 31st!  Find out more on their website:  maldenporchfest.org.",
     "desc_es": "",
@@ -785,9 +841,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/TDVaLMAKoqE/maxresdefault.jpg"
   },
   {
-    "id": "vid_030",
+    "id": "vid_031",
     "youtubeId": "UhQFbALpV7k",
     "category": "Nonprofits & Activism",
+    "series": "Malden Community Conversation",
     "title": "Malden Community Conversation with Tina LeGarde from UMA",
     "desc_en": "Find out how UMA can help you in the April Malden Community Coalition Conversation.  Check out our website and facebook page for future conversations and events.",
     "desc_es": "",
@@ -811,9 +868,10 @@
     "thumbnail_maxres": "https://i.ytimg.com/vi/UhQFbALpV7k/maxresdefault.jpg"
   },
   {
-    "id": "vid_031",
+    "id": "vid_032",
     "youtubeId": "9n7xNnW0Uzk",
     "category": "Nonprofits & Activism",
+    "series": "Malden Community Conversation",
     "title": "Malden Community Coalition Conversation with Shaan Chatterjee",
     "desc_en": "Hear from Malden-based immigration lawyer Shaan Chatterjee on how the recent changes in immigration policy are effecting our community, and the country at large, and what you can do to help.",
     "desc_es": "",

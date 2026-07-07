@@ -3,7 +3,7 @@ import os
 from yt_dlp import YoutubeDL
 
 CHANNEL_URL = "https://www.youtube.com/@MaldenCommunityCoalition/videos"
-OUTPUT_FILE = "./src/data/videos.json"
+OUTPUT_FILE = "../src/data/videos.json"
 
 def clean_description(desc):
     return desc.strip() if desc else ""
