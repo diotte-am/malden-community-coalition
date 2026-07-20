@@ -1,14 +1,26 @@
 [
   {
     "id": "staff-01",
-    "name": "Alex Martinez",
-    "email": "alex@maldencommunitycoalition.org",
-    "tags": ["Leadership", "Policy", "Partnerships"]
+    "name": "Chris Burgan",
+    "url": "https://www.chrisburganfullhearttarot.com/",
+    "title": "Cofounder of MCoCo",
+    "pronouns": "he/him",
+    "bio": "Chris has lived in Malden for 12 years, where he's been very active in the city's political life.  On top of political consulting work, Chris runs his own holistic wellness business using tarot reading, meditation, and more (chrisburganfullhearttarot.com).  He is an active volunteer for the Malden Pride Coalition, loves going to the farmers market, and trying Malden’s many restaurants.  In his free time, Chris enjoys DMing his D&D campaign, cooking, and singing.  Chris graduated from Bennington College in 2006."
   },
   {
     "id": "staff-02",
-    "name": "Sarah Jenkins",
-    "email": "sarah@maldencommunitycoalition.org",
-    "tags": ["Outreach", "Volunteering", "Workshops"]
+    "name": "Shane Landrum",
+    "url": "https://www.linkedin.com/in/shane-landrum-cliotropic",
+    "title": "Cofounder of MCoCo",
+    "pronouns": "he/they",
+    "bio": "Shane was born in the Atlanta area and has lived in Massachusetts for most of their adult life, and in Malden for 5 years. In addition to their day job in the tech industry, Shane is an artist, farm-to-table home cook, and lover of music and poetry. They are a friend of Malden Grows and the Urban Biodiversity Project. Shane is happy to share the fruit and vegetables from his garden in Maplewood Square, or to lead architecture tours in his favorite Malden neighborhoods. When not working from home, they can be found hanging out at Cafe Reynard, Your Coffery, and other locally-owned businesses. He earned a bachelor’s degree from Smith College and graduate degrees from Brandeis University."
+  },
+  {
+    "id": "staff-03",
+    "name": "Amare Diotte",
+    "url": "",
+    "title": "Technology Coordinator",
+    "pronouns": "he/they",
+    "bio": ""
   }
 ]
