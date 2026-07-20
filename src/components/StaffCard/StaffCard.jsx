@@ -11,24 +11,30 @@ export default function StaffCard({ member }) {
         
         <header className="card-header-row">
           <h3 className="card-title-highlight">{member.name}</h3>
+          
           {/* Dynamically query by the member's unique ID key path */}
           <span className="card-meta-badge staff-role-badge">
-            {t(`staff:members.${member.id}.role`)}
+            {member.role}
+            
           </span>
         </header>
+                 <span className="card-meta-badge staff-role-badge">
+            {member.pronouns && ` (${member.pronouns})`}
+            
+          </span>
 
         <hr className="card-divider-line" />
 
         <div className="card-body-block">
           <p className="card-description-body staff-bio-text">
-            {t(`staff:members.${member.id}.bio`)}
+            {member.bio}
           </p>
           
-          {member.email && (
+          {member.url && (
             <div className="card-footer-meta staff-contact-info">
-              <strong>{t('common:contact_labels.email')}:</strong>{' '}
-              <a href={`mailto:${member.email}`} className="nav-link resource-email-anchor">
-                {member.email}
+              <strong>{t('common:contact_labels.website')}:</strong>{' '}
+              <a href={member.url} className="nav-link resource-email-anchor">
+                {member.url}
               </a>
             </div>
           )}
