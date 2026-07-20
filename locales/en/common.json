@@ -21,7 +21,8 @@
   "contact_labels": {
     "poc": "Point of Contact",
     "phone": "Phone",
-    "email": "Email"
+    "email": "Email",
+    "website": "Website"
   },
   "fallbacks": {
     "no_description": "No description available."
