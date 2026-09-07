@@ -39,7 +39,6 @@ Open a fresh terminal in VS Code and verify that `(venv)` appears at the start o
 pip install requests
 ```
 
-
 ---
 
 ## Running the Application
