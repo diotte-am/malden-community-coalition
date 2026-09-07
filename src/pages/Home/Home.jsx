@@ -142,23 +142,14 @@ export default function Home() {
           {/* Right Main Content Column: Quick Contact Info Sticky Sidebar */}
           <aside className="horizontal-row-card home-sticky-sidebar">
             <div className="card-content-stack">
-              <h2 className="sidebar-title">📬 {t('home.contact_heading', 'Contact Us')}</h2>
+              <h2 className="sidebar-title"> {t('home.contact_heading', 'Contact Us')}</h2>
               <p className="card-description-body sidebar-body-text">
                 Have questions about resources or want to join our team of volunteers? Reach out anytime.
               </p>
               <hr className="sidebar-divider" />
-              <div className="sidebar-contact-details">
-                <div>
-                  <strong>Email:</strong>{' '}
-                  <a href="mailto:info@maldencommunityhub.org" className="nav-link">
-                    info@maldencommunityhub.org
-                  </a>
-                </div>
-                <div><strong>Office:</strong> Malden, MA 02148</div>
-              </div>
               <div className="sidebar-action-container">
                 <NavLink to="/contact" className="card-flush-footer-link">
-                  See contact details →
+                  Go to Contact Page →
                 </NavLink>
               </div>
             </div>

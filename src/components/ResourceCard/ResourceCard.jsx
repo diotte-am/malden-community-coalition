@@ -5,6 +5,9 @@ import './ResourceCard.css';
 export default function ResourceCard({ resource, descKey }) {
   const { t } = useTranslation();
 
+  /* Support multiple possible field names for updated date */
+  const updatedDate = resource.updated_at || resource.updatedAt || resource.last_updated;
+
   return (
     <article className="horizontal-row-card">
       <div className="card-content-stack">
@@ -48,19 +51,28 @@ export default function ResourceCard({ resource, descKey }) {
             )}
           </div>
 
-          {/* Action button linking out to the resource portal */}
-          {resource.website && (
-            <div className="resource-action-container">
-              <a 
-                href={resource.website} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="btn-action-primary resource-visit-btn"
-              >
-                {t('common:buttons.visit_website')}
-              </a>
-            </div>
-          )}
+          {/* Bottom Footer Row: Action Button & Subtle Updated Date */}
+          <div className="resource-card-bottom-row">
+            {resource.website && (
+              <div className="resource-action-container">
+                <a 
+                  href={resource.website} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="btn-action-primary resource-visit-btn"
+                >
+                  {t('common:buttons.visit_website')}
+                </a>
+              </div>
+            )}
+
+            {updatedDate && (
+              <span className="resource-updated-date">
+                {t('common:labels.updated', 'Updated')}: {updatedDate}
+              </span>
+            )}
+          </div>
+
         </div>
 
       </div>
