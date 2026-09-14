@@ -37,7 +37,7 @@ export default function EventBanner({
           {/* Header Row */}
           <div className="event-banner-header">
             <span className="event-banner-badge">
-              📢 {t('common:labels.upcoming_event', 'Upcoming Event')}
+              {t('common:labels.upcoming_event', 'Upcoming Event')}
             </span>
             <span className="event-zoom-hint">
               🔍 {t('common:labels.click_to_enlarge', 'Click image to enlarge')}
