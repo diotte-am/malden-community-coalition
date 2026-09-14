@@ -15,6 +15,8 @@ import VideoCard from '../../components/VideoCard';
 import ResourceCard from '../../components/ResourceCard';
 import HomeFeaturedSection from '../../components/HomeFeaturedSection';
 import PageHero from '../../components/PageHero';
+import EventBanner from '../../components/EventBanner';
+import eventPoster from '../../assets/upcoming-event.png';
 
 export default function Home() {
   const { t, i18n } = useTranslation();
@@ -60,7 +62,8 @@ export default function Home() {
 
       {/* Primary Shared Bound Margin Container */}
       <main className="page-container home-search-panel">
-        
+
+       
         {/* Overlapping Search Bar Console Dashboard */}
         <section className="search-accent-container">
           <h3 className="search-panel-heading">
@@ -91,6 +94,12 @@ export default function Home() {
           
           {/* Left Main Content Track: News & Dynamic Highlight Features */}
           <div className="home-main-content-column">
+             <EventBanner 
+              imageSrc={eventPoster}
+              altText="Malden Community Coalition Spring Gathering Poster"
+              /* articleUrl="/news/spring-gathering-2026" */ /* Uncomment when article is ready */
+            />
+            
             
             {/* Componentized Live Video Spotlight Feature */}
             {latestVideo && (

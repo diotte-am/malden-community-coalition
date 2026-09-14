@@ -1,0 +1,177 @@
+.event-banner-wrapper {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.event-banner-anchor {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.event-banner-card {
+  position: relative;
+  background: #ffffff;
+  border: 2px solid var(--brand-logo-orange, #eb8a0d);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+}
+
+/* Hover effect when the entire banner is clickable */
+.event-banner-anchor .event-banner-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.event-banner-badge {
+  display: inline-block;
+  background-color: var(--brand-logo-orange, #eb8a0d);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.event-banner-title {
+  margin: 0 0 1rem 0;
+  font-size: 1.4rem;
+  color: var(--primary-color, #0d3b66);
+}
+
+.event-poster-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.event-poster-img {
+  width: 100%;
+  max-height: 500px; /* Prevents giant vertical posters from overflowing the screen */
+  object-fit: contain;
+  display: block;
+}
+
+.event-banner-action {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.event-link-btn {
+  display: inline-block;
+  pointer-events: none; /* Keeps button styled while parent anchor handles click */
+}
+
+/* Header layout with zoom hint */
+.event-banner-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.event-zoom-hint {
+  font-size: 0.8rem;
+  color: #666666;
+  font-weight: 500;
+}
+
+/* Make image container act like a clean clickable button */
+button.event-poster-container {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+button.event-poster-container:hover {
+  opacity: 0.95;
+}
+
+button.event-poster-container:hover .event-poster-img {
+  transform: scale(1.005);
+}
+
+.event-poster-img {
+  transition: transform 0.2s ease;
+}
+
+/* ==========================================================================
+   🔍 Full-Screen Lightbox Modal
+   ========================================================================== */
+
+.event-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 1.5rem;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.event-modal-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-modal-full-img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* Top-Right Close Button */
+.event-modal-close-btn {
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #111111;
+  border: none;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  z-index: 10000;
+}
+
+.event-modal-close-btn:hover {
+  background-color: var(--brand-logo-orange, #eb8a0d);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}

@@ -22,22 +22,29 @@ export default function ContactComponents() {
           <div className="contact-info-list">
             <div>
               <h3 className="contact-item-title">Email Address</h3>
-              <a href="mailto:info@maldencommunitycoalition.org" className="nav-link contact-email-link">
-                info@maldencommunitycoalition.org
+              <a href="mailto:maldencommunitycoalition@gmail.com" className="nav-link contact-email-link">
+                maldencommunitycoalition@gmail.com
               </a>
             </div>
 
             <div>
-              <h3 className="contact-item-title">Office Hours</h3>
-              <p className="card-footer-meta contact-hours-text">
-                Monday – Friday: 9:00 AM – 5:00 PM
-              </p>
+              <h3 className="contact-item-title">Facebook Group</h3>
+              <a href="https://www.facebook.com/groups/973837211343088" className="nav-link contact-email-link">
+                Malden Community Coalition
+              </a>
             </div>
+
+            <div>
+              <h3 className="contact-item-title">YouTube Channel</h3>
+              <a href="https://www.youtube.com/@MaldenCommunityCoalition" className="nav-link contact-email-link">
+                Malden Community Coalition
+              </a>
+            </div>
+ 
           </div>
         </section>
 
-        {/* Right Column: Clean Link/Call to Action to Send a Message */}
-        <section className="contact-cta-column" aria-label="Send a message pathway">
+        {/* <section className="contact-cta-column" aria-label="Send a message pathway">
           <h3 className="contact-cta-title">
             Want to send a direct inquiry?
           </h3>
@@ -47,7 +54,7 @@ export default function ContactComponents() {
           <NavLink to="/contact/message" className="btn-action-primary contact-cta-btn">
             Open Contact Form
           </NavLink>
-        </section>
+        </section> */}
 
       </div>
     </main>
