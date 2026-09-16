@@ -16,7 +16,7 @@ import ResourceCard from '../../components/ResourceCard';
 import HomeFeaturedSection from '../../components/HomeFeaturedSection';
 import PageHero from '../../components/PageHero';
 import EventBanner from '../../components/EventBanner';
-import eventPoster from '../../assets/upcoming-event-1.png';
+import eventPoster from '../../assets/upcoming-event-2.png';
 
 export default function Home() {
   const { t, i18n } = useTranslation();
