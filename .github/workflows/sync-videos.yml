@@ -34,8 +34,9 @@ jobs:
           echo "$COOKIES_DATA" > scripts/cookies.txt
 
       - name: Run Scraper Update Script
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
         run: |
-          # Change directory into scripts folder so relative paths match up
           cd scripts
           python generate_videos_json.py
 

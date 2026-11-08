@@ -1,129 +1,110 @@
 import json
 import os
-from yt_dlp import YoutubeDL
+import urllib.request
+import urllib.parse
 
-CHANNEL_URL = "https://www.youtube.com/@MaldenCommunityCoalition/videos"
+CHANNEL_HANDLE = "@MaldenCommunityCoalition"
 OUTPUT_FILE = "../src/data/videos.json"
+API_KEY = os.environ.get("YOUTUBE_API_KEY", "")
 
-def clean_description(desc):
-    return desc.strip() if desc else ""
+def fetch_json(url):
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    with urllib.request.urlopen(req) as response:
+        return json.loads(response.read().decode('utf-8'))
 
 def parse_date(date_str):
-    if not date_str or len(date_str) != 8:
+    # ISO string like '2026-04-12T14:30:00Z' -> '2026-04-12'
+    if not date_str or len(date_str) < 10:
         return ""
-    return f"{date_str[0:4]}-{date_str[4:6]}-{date_str[6:8]}"
-
-def format_duration(seconds):
-    if not seconds:
-        return "0:00"
-    return f"{seconds // 60}:{seconds % 60:02d}"
+    return date_str[:10]
 
 def load_existing_database():
-    """Loads current data file to preserve existing translations."""
     if not os.path.exists(OUTPUT_FILE):
         return {}
     try:
         with open(OUTPUT_FILE, 'r', encoding='utf-8') as f:
             data = json.load(f)
             return {item['youtubeId']: item for item in data if 'youtubeId' in item}
-    except Exception as e:
-        print(f"⚠️ Warning: Could not parse existing database file ({str(e)}). Building fresh.")
+    except Exception:
         return {}
 
 def update_video_database():
-    print(f"🔄 Pulling active channel feed: {CHANNEL_URL}")
-    
+    if not API_KEY:
+        print("❌ Error: YOUTUBE_API_KEY environment variable is missing.")
+        return
+
+    print(f"🔄 Fetching channel metadata via YouTube API for {CHANNEL_HANDLE}...")
     existing_db = load_existing_database()
-    print(f"📦 Loaded {len(existing_db)} existing video records from local database file.")
 
-    cookies_path = "cookies.txt" if os.path.exists("cookies.txt") else None
+    try:
+        # Step 1: Resolve channel handle to Uploads Playlist ID
+        channel_url = f"https://www.googleapis.com/youtube/v3/channels?part=contentDetails&forHandle={CHANNEL_HANDLE}&key={API_KEY}"
+        channel_data = fetch_json(channel_url)
+        
+        if not channel_data.get('items'):
+            print("❌ Error: Channel not found.")
+            return
 
-    # Request full playlist metadata dictionary parsing directly
-    ydl_opts = {
-        'extract_flat': False,
-        'quiet': True,
-        'no_warnings': True,
-        'playlistend': 50,
-        'skip_download': True,
-    }
+        uploads_playlist_id = channel_data['items'][0]['contentDetails']['relatedPlaylists']['uploads']
 
-    if cookies_path:
-        ydl_opts['cookiefile'] = cookies_path
+        # Step 2: Fetch playlist items (includes full descriptions, thumbnails, upload dates)
+        playlist_url = f"https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&playlistId={uploads_playlist_id}&maxResults=50&key={API_KEY}"
+        playlist_data = fetch_json(playlist_url)
 
-    fresh_scraped_list = []
+        fresh_scraped_list = []
 
-    with YoutubeDL(ydl_opts) as ydl:
-        try:
-            channel_info = ydl.extract_info(CHANNEL_URL, download=False)
-            if 'entries' not in channel_info:
-                print("❌ Error parsing channel entries.")
-                return
-
-            print("Parsing channel entries...")
+        for item in playlist_data.get('items', []):
+            snippet = item.get('snippet', {})
+            yt_id = snippet.get('resourceId', {}).get('videoId')
             
-            for entry in channel_info['entries']:
-                if not entry:
-                    continue
-                
-                yt_id = entry.get("id")
-                if not yt_id:
-                    continue
-                
-                # Check if we already have this video AND its English description is already filled
-                if yt_id in existing_db and existing_db[yt_id].get("desc_en"):
-                    fresh_scraped_list.append(existing_db[yt_id])
-                    continue
+            if not yt_id:
+                continue
 
-                old_entry = existing_db.get(yt_id, {})
+            old_entry = existing_db.get(yt_id, {})
+            raw_date = snippet.get('publishedAt', '')
 
-                # Extract fields safely directly from the entry payload
-                raw_date = entry.get("upload_date", "")
-                raw_desc = entry.get("description", "")
-                
-                new_node = {
-                    "id": "vid_temp",
-                    "youtubeId": yt_id,
-                    "category": entry.get("categories", ["Archive"])[0] if entry.get("categories") else "Archive",
-                    "title": entry.get("title", "Untitled Workshop"),
-                    
-                    # Pull description, defaulting to old saved description if available
-                    "desc_en": clean_description(raw_desc) or old_entry.get("desc_en", ""),
-                    "desc_es": old_entry.get("desc_es", ""),
-                    "desc_pt": old_entry.get("desc_pt", ""),
-                    "desc_zh": old_entry.get("desc_zh", ""),
-                    
-                    "upload_date_raw": raw_date,
-                    "upload_date_display": parse_date(raw_date),
-                    "duration_seconds": entry.get("duration"),
-                    "duration_display": format_duration(entry.get("duration")),
-                    "view_count": entry.get("view_count", 0),
-                    "like_count": entry.get("like_count", 0),
-                    "tags": entry.get("tags", []),
-                    "video_url": entry.get("webpage_url", f"https://www.youtube.com/watch?v={yt_id}"),
-                    "thumbnail_maxres": entry.get("thumbnail", f"https://i.ytimg.com/vi/{yt_id}/maxresdefault.jpg")
-                }
-                
-                fresh_scraped_list.append(new_node)
-                print(f"✨ Parsed: {new_node['title'][:40]}...")
+            # High-res thumbnail fallback sequence
+            thumbnails = snippet.get('thumbnails', {})
+            thumb_url = (
+                thumbnails.get('maxres', {}).get('url') or 
+                thumbnails.get('high', {}).get('url') or 
+                f"https://i.ytimg.com/vi/{yt_id}/hqdefault.jpg"
+            )
 
-            if not fresh_scraped_list:
-                print("🛑 No data parsed. Aborting save.")
-                return
+            node = {
+                "id": "vid_temp",
+                "youtubeId": yt_id,
+                "category": old_entry.get("category", "Archive"),
+                "title": snippet.get('title', 'Untitled Video'),
+                "desc_en": snippet.get('description', '').strip(),
+                "desc_es": old_entry.get("desc_es", ""),
+                "desc_pt": old_entry.get("desc_pt", ""),
+                "desc_zh": old_entry.get("desc_zh", ""),
+                "upload_date_raw": raw_date.replace("-", "")[:8],
+                "upload_date_display": parse_date(raw_date),
+                "duration_seconds": old_entry.get("duration_seconds", 0),
+                "duration_display": old_entry.get("duration_display", "0:00"),
+                "view_count": old_entry.get("view_count", 0),
+                "like_count": old_entry.get("like_count", 0),
+                "tags": old_entry.get("tags", []),
+                "video_url": f"https://www.youtube.com/watch?v={yt_id}",
+                "thumbnail_maxres": thumb_url
+            }
 
-            # Sort all videos by upload date (newest first)
-            fresh_scraped_list.sort(key=lambda x: x.get('upload_date_raw', ''), reverse=True)
+            fresh_scraped_list.append(node)
 
-            # Re-index IDs sequentially
-            for index, item in enumerate(fresh_scraped_list, start=1):
-                item["id"] = f"vid_{index:03d}"
+        # Sort newest first & re-index IDs sequentially
+        fresh_scraped_list.sort(key=lambda x: x.get('upload_date_raw', ''), reverse=True)
+        for index, video in enumerate(fresh_scraped_list, start=1):
+            video["id"] = f"vid_{index:03d}"
 
-            with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-                json.dump(fresh_scraped_list, f, indent=2, ensure_ascii=False)
-                
-            print(f"🎉 Database file successfully updated! Total count: {len(fresh_scraped_list)} entries.")
+        with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+            json.dump(fresh_scraped_list, f, indent=2, ensure_ascii=False)
 
-        except Exception as e:
-            print(f"❌ Error during runtime: {str(e)}")
+        print(f"🎉 Successfully fetched {len(fresh_scraped_list)} videos with full metadata via API!")
+
+    except Exception as e:
+        print(f"❌ Error during API sync: {str(e)}")
 
 if __name__ == "__main__":
     update_video_database()
