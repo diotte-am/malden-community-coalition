@@ -70,33 +70,37 @@ def update_video_database():
                 
                 yt_id = entry.get("id")
                 
-                # 🛡️ SMART CHECK: If we already have this video, preserve its exact translations!
+                # If we already have this video, preserve its exact translations
                 if yt_id in existing_db:
                     fresh_scraped_list.append(existing_db[yt_id])
                     continue
                 
                 # If it's a brand new video, construct a fresh node object
-                new_node = {
-                    "id": f"vid_temp", # Will re-index sequentially below
-                    "youtubeId": yt_id,
-                    "category": entry.get("categories", ["Archive"])[0] if entry.get("categories") else "Archive",
-                    "title": entry.get("title", ""),
-                    "desc_en": clean_description(entry.get("description", "")),
-                    "desc_es": "",
-                    "desc_pt": "",
-                    "desc_zh": "",
-                    "upload_date_raw": entry.get("upload_date", ""),
-                    "upload_date_display": parse_date(entry.get("upload_date", "")),
-                    "duration_seconds": entry.get("duration"),
-                    "duration_display": format_duration(entry.get("duration")),
-                    "view_count": entry.get("view_count", 0),
-                    "like_count": entry.get("like_count", 0),
-                    "tags": entry.get("tags", []),
-                    "video_url": entry.get("webpage_url", f"https://www.youtube.com/watch?v={yt_id}"),
-                    "thumbnail_maxres": entry.get("thumbnail", "")
-                }
-                fresh_scraped_list.append(new_node)
-                print(f"✨ New Video Found: {new_node['title'][:40]}...")
+                try:
+                    new_node = {
+                        "id": "vid_temp",
+                        "youtubeId": yt_id,
+                        "category": entry.get("categories", ["Archive"])[0] if entry.get("categories") else "Archive",
+                        "title": entry.get("title", "Untitled Workshop"),
+                        "desc_en": clean_description(entry.get("description", "")),
+                        "desc_es": "",
+                        "desc_pt": "",
+                        "desc_zh": "",
+                        "upload_date_raw": entry.get("upload_date", ""),
+                        "upload_date_display": parse_date(entry.get("upload_date", "")),
+                        "duration_seconds": entry.get("duration"),
+                        "duration_display": format_duration(entry.get("duration")),
+                        "view_count": entry.get("view_count", 0),
+                        "like_count": entry.get("like_count", 0),
+                        "tags": entry.get("tags", []),
+                        "video_url": entry.get("webpage_url", f"https://www.youtube.com/watch?v={yt_id}"),
+                        "thumbnail_maxres": entry.get("thumbnail", "")
+                    }
+                    fresh_scraped_list.append(new_node)
+                    print(f"✨ New Video Found: {new_node['title'][:40]}...")
+                except Exception as inner_err:
+                    print(f"⚠️ Skipped malformed video entry {yt_id}: {str(inner_err)}")
+                    continue
 
             if not fresh_scraped_list:
                 print("🛑 No data parsed. Aborting save.")
