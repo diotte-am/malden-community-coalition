@@ -912,7 +912,7 @@
     "like_count": 0,
     "tags": [],
     "video_url": "https://www.youtube.com/watch?v=4xdU3FEy_cY",
-    "thumbnail_maxres": ""
+    "thumbnail_maxres": "https://i.ytimg.com/vi/4xdU3FEy_cY/maxresdefault.jpg"
   },
   {
     "id": "vid_034",
@@ -931,7 +931,7 @@
     "like_count": 0,
     "tags": [],
     "video_url": "https://www.youtube.com/watch?v=FHRqqwaJKk0",
-    "thumbnail_maxres": ""
+    "thumbnail_maxres": "https://i.ytimg.com/vi/FHRqqwaJKk0/maxresdefault.jpg"
   },
   {
     "id": "vid_035",
@@ -950,6 +950,6 @@
     "like_count": 0,
     "tags": [],
     "video_url": "https://www.youtube.com/watch?v=2gKUYLtG4Ns",
-    "thumbnail_maxres": ""
+    "thumbnail_maxres": "https://i.ytimg.com/vi/2gKUYLtG4Ns/maxresdefault.jpg"
   }
 ]
