@@ -38,12 +38,19 @@ def update_video_database():
     existing_db = load_existing_database()
     print(f"📦 Loaded {len(existing_db)} existing video records from local database file.")
 
+    # Check if a cookies file was written by our workflow runner
+    cookies_path = "cookies.txt" if os.path.exists("cookies.txt") else None
+
     ydl_opts = {
         'extract_flat': False,
         'quiet': True,
         'no_warnings': True,
-        'playlistend': 50, # Scrape recent 50 uploads to find updates quickly
+        'playlistend': 50,
     }
+
+    # Pass cookies securely if available
+    if cookies_path:
+        ydl_opts['cookiefile'] = cookies_path
 
     fresh_scraped_list = []
 
