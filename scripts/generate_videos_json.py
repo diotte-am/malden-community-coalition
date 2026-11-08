@@ -46,6 +46,7 @@ def update_video_database():
         'quiet': True,
         'no_warnings': True,
         'playlistend': 50,
+        'skip_download': True,
     }
 
     # Pass cookies securely if available
