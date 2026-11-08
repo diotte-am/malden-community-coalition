@@ -42,7 +42,7 @@ def update_video_database():
     cookies_path = "cookies.txt" if os.path.exists("cookies.txt") else None
 
     ydl_opts = {
-        'extract_flat': False,
+        'extract_flat': 'in_playlist',
         'quiet': True,
         'no_warnings': True,
         'playlistend': 50,
