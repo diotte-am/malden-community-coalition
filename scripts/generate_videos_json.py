@@ -10,7 +10,7 @@ def clean_description(desc):
 
 def parse_date(date_str):
     if not date_str or len(date_str) != 8:
-        return date_str
+        return ""
     return f"{date_str[0:4]}-{date_str[4:6]}-{date_str[6:8]}"
 
 def format_duration(seconds):
@@ -69,35 +69,58 @@ def update_video_database():
                     continue
                 
                 yt_id = entry.get("id")
+                if not yt_id:
+                    continue
                 
-                # If we already have this video, preserve its exact translations
-                if yt_id in existing_db:
+                # 🛡️ SMART CHECK: If we already have this video AND it has a description, preserve it!
+                if yt_id in existing_db and existing_db[yt_id].get("desc_en"):
                     fresh_scraped_list.append(existing_db[yt_id])
                     continue
                 
-                # If it's a brand new video, construct a fresh node object
+                # If it's a brand new video (or missing metadata), fetch full individual node info
+                try:
+                    detailed_opts = {
+                        'quiet': True,
+                        'no_warnings': True,
+                        'skip_download': True,
+                    }
+                    if cookies_path:
+                        detailed_opts['cookiefile'] = cookies_path
+
+                    # Fetch the full metadata page for this specific video ID
+                    with YoutubeDL(detailed_opts) as detailed_ydl:
+                        video_info = detailed_ydl.extract_info(f"https://www.youtube.com/watch?v={yt_id}", download=False)
+                except Exception:
+                    video_info = entry  # Fallback to playlist entry if detailed fetch fails
+
+                # Preserve any user translations if updating an existing record
+                old_entry = existing_db.get(yt_id, {})
+
                 try:
                     new_node = {
                         "id": "vid_temp",
                         "youtubeId": yt_id,
-                        "category": entry.get("categories", ["Archive"])[0] if entry.get("categories") else "Archive",
-                        "title": entry.get("title", "Untitled Workshop"),
-                        "desc_en": clean_description(entry.get("description", "")),
-                        "desc_es": "",
-                        "desc_pt": "",
-                        "desc_zh": "",
-                        "upload_date_raw": entry.get("upload_date", ""),
-                        "upload_date_display": parse_date(entry.get("upload_date", "")),
-                        "duration_seconds": entry.get("duration"),
-                        "duration_display": format_duration(entry.get("duration")),
-                        "view_count": entry.get("view_count", 0),
-                        "like_count": entry.get("like_count", 0),
-                        "tags": entry.get("tags", []),
-                        "video_url": entry.get("webpage_url", f"https://www.youtube.com/watch?v={yt_id}"),
-                        "thumbnail_maxres": entry.get("thumbnail", "")
+                        "category": video_info.get("categories", ["Archive"])[0] if video_info.get("categories") else "Archive",
+                        "title": video_info.get("title", entry.get("title", "Untitled Workshop")),
+                        
+                        # Full metadata extraction
+                        "desc_en": clean_description(video_info.get("description", entry.get("description", ""))),
+                        "desc_es": old_entry.get("desc_es", ""),
+                        "desc_pt": old_entry.get("desc_pt", ""),
+                        "desc_zh": old_entry.get("desc_zh", ""),
+                        
+                        "upload_date_raw": video_info.get("upload_date", entry.get("upload_date", "")),
+                        "upload_date_display": parse_date(video_info.get("upload_date", entry.get("upload_date", ""))),
+                        "duration_seconds": video_info.get("duration", entry.get("duration")),
+                        "duration_display": format_duration(video_info.get("duration", entry.get("duration"))),
+                        "view_count": video_info.get("view_count", entry.get("view_count", 0)),
+                        "like_count": video_info.get("like_count", entry.get("like_count", 0)),
+                        "tags": video_info.get("tags", entry.get("tags", [])),
+                        "video_url": video_info.get("webpage_url", f"https://www.youtube.com/watch?v={yt_id}"),
+                        "thumbnail_maxres": video_info.get("thumbnail", entry.get("thumbnail", f"https://i.ytimg.com/vi/{yt_id}/maxresdefault.jpg"))
                     }
                     fresh_scraped_list.append(new_node)
-                    print(f"✨ New Video Found: {new_node['title'][:40]}...")
+                    print(f"✨ Parsed Full Metadata: {new_node['title'][:40]}...")
                 except Exception as inner_err:
                     print(f"⚠️ Skipped malformed video entry {yt_id}: {str(inner_err)}")
                     continue
