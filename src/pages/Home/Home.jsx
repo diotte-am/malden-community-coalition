@@ -94,11 +94,7 @@ export default function Home() {
           
           {/* Left Main Content Track: News & Dynamic Highlight Features */}
           <div className="home-main-content-column">
-             <EventBanner 
-              imageSrc={eventPoster}
-              altText="Malden Community Coalition Spring Gathering Poster"
-              /* articleUrl="/news/spring-gathering-2026" */ /* Uncomment when article is ready */
-            />
+            
             
             
             {/* Componentized Live Video Spotlight Feature */}
