@@ -12,9 +12,11 @@ Ensure you have **Homebrew** installed on your system to manage packages. You wi
 
 ### 1. Install Node.js
 Install Node.js and npm (Node Package Manager) using Homebrew:
+
 ```bash
 brew install node
 ```
+
 *Note: You must completely close and reopen your terminal session after this finishes so your system recognizes the `npm` command.*
 
 ### 2. Install Frontend Dependencies
